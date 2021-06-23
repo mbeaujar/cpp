@@ -4,7 +4,9 @@ CC=clang++
 RM=rm -f
 
 SRCS = main.cpp \
-	Contact.cpp
+	Contact.cpp \
+	add.cpp \
+	search.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

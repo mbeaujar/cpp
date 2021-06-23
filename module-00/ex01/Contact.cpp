@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 21:08:58 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/22 23:42:26 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:31:24 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ Contact::Contact(void)
 	return;
 }
 
-Contact::~Contact(void)
-{
+Contact::~Contact(void) {
 	return;
 }
 
@@ -48,112 +47,90 @@ void Contact::clearContact(void)
 	this->_darkest_secret = "";
 }
 
-void Contact::setfirstname(std::string name)
-{
+void Contact::setfirstname(std::string name) {
 	this->_first_name = name;
 }
 
-void Contact::setlastname(std::string name)
-{
+void Contact::setlastname(std::string name) {
 	this->_last_name = name;
 }
 
-void Contact::setnickname(std::string name)
-{
+void Contact::setnickname(std::string name) {
 	this->_nickname = name;
 }
 
-void Contact::setlogin(std::string name)
-{
+void Contact::setlogin(std::string name) {
 	this->_login = name;
 }
 
-void Contact::setpostaladdress(std::string name)
-{
+void Contact::setpostaladdress(std::string name) {
 	this->_postal_address = name;
 }
 
-void Contact::setemailaddress(std::string name)
-{
+void Contact::setemailaddress(std::string name) {
 	this->_email_address = name;
 }
 
-void Contact::setphonenumber(std::string name)
-{
+void Contact::setphonenumber(std::string name) {
 	this->_phone_number = name;
 }
 
-void Contact::setbirthdaydate(std::string name)
-{
+void Contact::setbirthdaydate(std::string name) {
 	this->_birthday_date = name;
 }
 
-void Contact::setfavoritemeal(std::string name)
-{
+void Contact::setfavoritemeal(std::string name) {
 	this->_favorite_meal = name;
 }
 
-void Contact::setunderwearcolor(std::string name)
-{
+void Contact::setunderwearcolor(std::string name) {
 	this->_underwear_color = name;
 }
 
-void Contact::setdarkestsecret(std::string name)
-{
+void Contact::setdarkestsecret(std::string name) {
 	this->_darkest_secret = name;
 }
 
-std::string Contact::getfirstname(void) const
-{
+std::string Contact::getfirstname(void) const {
 	return (this->_first_name);
 }
 
-std::string Contact::getlastname(void) const
-{
+std::string Contact::getlastname(void) const {
 	return (this->_last_name);
 }
 
-std::string Contact::getnickname(void) const
-{
+std::string Contact::getnickname(void) const {
 	return (this->_nickname);
 }
 
-std::string Contact::getlogin(void) const
-{
+std::string Contact::getlogin(void) const {
 	return (this->_login);
 }
 
-std::string Contact::getpostaladdress(void) const
-{
+std::string Contact::getpostaladdress(void) const {
 	return (this->_postal_address);
 }
 
-std::string Contact::getemailaddress(void) const
-{
+std::string Contact::getemailaddress(void) const {
 	return (this->_email_address);
 }
 
-std::string Contact::getphonenumber(void) const
-{
+std::string Contact::getphonenumber(void) const {
 	return (this->_phone_number);
 }
 
-std::string Contact::getbirthdaydate(void) const
-{
+std::string Contact::getbirthdaydate(void) const {
 	return (this->_birthday_date);
 }
 
-std::string Contact::getfavoritemeal(void) const
-{
+std::string Contact::getfavoritemeal(void) const {
 	return (this->_favorite_meal);
 }
 
-std::string Contact::getunderwearcolor(void) const
-{
+std::string Contact::getunderwearcolor(void) const {
 	return (this->_underwear_color);
 }
 
-std::string Contact::getdarkestsecret(void) const
-{
+std::string Contact::getdarkestsecret(void) const {
 	return (this->_darkest_secret);
 }

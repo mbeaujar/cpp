@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 21:00:21 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/22 23:37:41 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:36:28 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ class Contact {
 		
 };
 
-
+int add_contact(Contact list[8], int index);
+int search_contact(Contact list[8], int index);
+int recup_index_contact(int index);
+void display_info_in_case(std::string info);
 
 #endif 
