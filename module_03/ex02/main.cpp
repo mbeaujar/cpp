@@ -6,13 +6,14 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 19:54:42 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 13:43:50 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/27 16:46:02 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -32,5 +33,8 @@ int main()
 	bob.guardGate();
 	bob = ScavTrap("Joe");
 	bob.attack(enemy);
+	std::cout << " ------- EX02 --------" << std::endl;
+	FragTrap Jean("Jean");
+	Jean.highFivesGuys();
 	return (0);
 }

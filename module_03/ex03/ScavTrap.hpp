@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 19:55:20 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 13:33:52 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/27 16:54:32 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
