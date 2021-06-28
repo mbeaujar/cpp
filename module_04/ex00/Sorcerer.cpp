@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:54:28 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 21:14:43 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/28 14:07:31 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 Sorcerer::Sorcerer() : _name("unknown"), _title("unknown") {}
 
-Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title) {}
+Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title) {
+    std::cout << name << ", " << title << ", is born!" << std::endl;
+}
 
+Sorcerer::~Sorcerer() {
+    std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same!" << std::endl;
+}
 
 Sorcerer::Sorcerer(Sorcerer const & rhs) {
     *this = rhs;
@@ -25,6 +30,11 @@ Sorcerer & Sorcerer::operator=(Sorcerer const & rhs) {
     this->_name = rhs.getName();
     this->_title = rhs.getTitle();
     return *this;
+}
+
+
+void Sorcerer::polymorph(Victim const & target) const {
+    target.getPolymorphed();
 }
 
 
@@ -46,4 +56,9 @@ std::string Sorcerer::getName(void) const {
 
 std::string Sorcerer::getTitle(void) const {
     return this->_title;
+}
+
+std::ostream & operator<<(std::ostream & o, Sorcerer const & rhs) {
+    o << "I am " << rhs.getName() << ", " << rhs.getTitle() << ", and I like ponies!" << std::endl;
+    return o;
 }

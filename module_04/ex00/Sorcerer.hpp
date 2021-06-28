@@ -6,25 +6,28 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:54:04 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 21:15:23 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/28 14:07:30 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SORCERER_HPP
 # define SORCERER_HPP
 
+# include "Victim.hpp"
 # include <iostream>
 
 class Sorcerer {
     private:
         std::string _name;
         std::string _title;
-    public:
         Sorcerer();
+    public:
         Sorcerer(std::string name, std::string title);
         Sorcerer(Sorcerer const & rhs);
         ~Sorcerer();
         Sorcerer & operator=(Sorcerer const & rhs);
+        
+        void polymorph(Victim const & target) const;
 
         /* Settlers */
         void setName(std::string name);
@@ -33,6 +36,10 @@ class Sorcerer {
         /* Getters */
         std::string getName(void) const;
         std::string getTitle(void) const;
-           
+        
 };
-#endif 
+
+std::ostream & operator<<(std::ostream & o, Sorcerer const & rhs);
+
+
+#endif  

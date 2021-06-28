@@ -10,4 +10,4 @@
 
  - https://www.cprogramming.com/tutorial/virtual_inheritance.html
 
- - https://www.cplusplus.com/articles/2LywvCM9/
+ - https://www.cplusplus.com/articles/2LywvCM9/c

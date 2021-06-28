@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 20:52:37 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/28 14:23:12 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/06/28 18:29:00 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/06/28 18:51:41 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-int main()
+#include <iostream>
+#include "AWeapon.hpp"
+#include "Enemy.hpp"
+
+class Character
 {
-    Sorcerer robert("Robert", "the Magnificent");
-    Victim jim("Jimmy");
-    Peon joe("Joe");
-    std::cout << robert << jim << joe;
-    robert.polymorph(jim);
-    robert.polymorph(joe);
-    return 0;
-}
+private:
+    Character();
+
+public:
+    Character(std::string const &name);
+    ~Character();
+    Character(Character const &rhs);
+    void recoverAP();
+    void equip(AWeapon *);
+    void attack(Enemy *);
+};
+
+#endif
