@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 15:33:32 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/29 14:35:15 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/06/29 18:39:26 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/06/29 18:39:50 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-#define PLASMARIFLE_HPP
+#ifndef TACTICALMARINE_HPP
+#define TACTICALMARINE_HPP
 
-#include "AWeapon.hpp"
-#include <iostream>
 
-class PlasmaRifle : public AWeapon {
-    public:
-        PlasmaRifle();
-        PlasmaRifle(std::string const & name, int apcost, int damage);
-        PlasmaRifle(PlasmaRifle const & rhs);
-       ~PlasmaRifle();
-        PlasmaRifle & operator=(PlasmaRifle const & rhs);
-
-        void attack() const;      
-};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:03:57 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/28 16:18:08 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:31:56 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Enemy {
         Enemy();
         Enemy(int hp, std::string const & type);
         Enemy(Enemy const & rhs);
-        ~Enemy();
+        virtual ~Enemy() = 0;
         Enemy & operator=(Enemy const & rhs);
 
         virtual void takeDamage(int damage);
@@ -33,5 +33,6 @@ class Enemy {
         int getHP() const;
 
 };
+
 
 #endif
