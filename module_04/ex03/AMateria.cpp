@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:29:48 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/01 20:08:52 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/01 22:18:01 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ AMateria & AMateria::operator=(AMateria const & copy) {
    return *this;
 }
 
+void AMateria::use(ICharacter & target) {
+    this->_xp += 10;
+}
+
 /* Getters */
 
 std::string const & AMateria::getType() const {
@@ -36,8 +40,4 @@ std::string const & AMateria::getType() const {
 
 unsigned int AMateria::getXP() const {
     return this->_xp;
-}
-
-AMateria* AMateria::clone() const {
-    
 }
