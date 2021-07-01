@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 18:36:33 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/29 20:18:15 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/06/30 18:43:28 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/01 19:13:25 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ISQUAD_HPP
 #define ISQUAD_HPP
 
-#include <iostream>
 #include "ISpaceMarine.hpp"
 
 class ISquad {
