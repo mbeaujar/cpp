@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:35:39 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/01 19:11:22 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:44:17 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class Squad : public ISquad {
         static int      len;
         static int      count;
         int             nb;
+        void freelist(t_list *head);
+        void addlist(t_list **head, t_list *add);
     public:
         Squad();
         Squad(Squad const & copy);
@@ -39,9 +41,14 @@ class Squad : public ISquad {
 
         /* Fct membre */
         int push(ISpaceMarine *add);
-        ISpaceMarine *getUnit(int nb) const;
         bool is_in_array(ISpaceMarine *newMarine);
+
+        /* Getters */
         int getCount() const;
+        ISpaceMarine *getUnit(int nb) const;
+        t_list* getArray() const;
+        int getNb() const;
+        
 };
 
 #endif

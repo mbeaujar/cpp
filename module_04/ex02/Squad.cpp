@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:36:06 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/01 19:17:52 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:44:18 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 t_list*  Squad::array = 0;
 int     Squad::len = 0;
 int     Squad::count = 0;
-
-void freelist(t_list *head);
 
 Squad::Squad() {
     this->nb = this->count;
@@ -28,11 +26,14 @@ Squad::~Squad() {
 }
 
 Squad::Squad(Squad const & copy) {
-    (void)copy;
+    *this = copy;
 }
 
 Squad & Squad::operator=(Squad const & copy) {
-    (void)copy;
+    freelist(this->array);
+    this->array = copy.getArray();
+    this->nb = copy.getNb();
+    this->len = copy.getCount();
     return *this;
 }
 
@@ -52,9 +53,10 @@ t_list *newlst(ISpaceMarine *unit) {
     return neww;
 }
 
-void addlist(t_list **head, t_list *add)
+void Squad::addlist(t_list **head, t_list *add)
 {
     t_list *tmp = *head;
+    this->len++;
     if (!*head)
     {
         *head = add;
@@ -62,10 +64,10 @@ void addlist(t_list **head, t_list *add)
     }
     while (tmp->next)
         tmp = tmp->next;
-    tmp->next = add;    
+    tmp->next = add; 
 }
 
-void freelist(t_list *head) {
+void Squad::freelist(t_list *head) {
     t_list *tmp;
     
     while (head)
@@ -75,6 +77,7 @@ void freelist(t_list *head) {
         delete tmp->unit;
         delete tmp;
     }
+    this->len = 0;
 }
 
 bool Squad::is_in_array(ISpaceMarine *newMarine) {
@@ -102,6 +105,9 @@ int Squad::push(ISpaceMarine *add) {
     return this->len;
 }
 
+
+/* Getters */
+
 ISpaceMarine* Squad::getUnit(int nb) const {
     t_list *tmp;
 
@@ -120,4 +126,12 @@ int Squad::getCount() const {
         tmp = tmp->next;
     }
     return i;
+}
+
+t_list* Squad::getArray() const {
+    return this->array;
+}
+
+int Squad::getNb() const {
+    return this->nb;
 }

@@ -1,59 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:20:41 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 14:46:47 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:46:04 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice() : AMateria("") {}
+Cure::Cure() : AMateria("") {}
 
-Ice::Ice(std::string const & type) : AMateria(type) {
+Cure::Cure(std::string const & type) : AMateria(type) {
     AMateria::_type = type;
 }
 
-Ice::~Ice() {}
+Cure::~Cure() {}
 
-Ice::Ice(Ice const & copy) {
+Cure::Cure(Cure const & copy) {
     *this = copy;
 }
 
-Ice & Ice::operator=(Ice const & copy) {
+Cure & Cure::operator=(Cure const & copy) {
     this->setType(copy.getType());
     this->setXp(copy.getXP());
     return *this;
 }
 
-void Ice::use(ICharacter & target) {
-    //std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
+void Cure::use(ICharacter & target) {
+    //std::cout << "* shoots an Cure bolt at " << target.getName() " *" << std::endl;
+    std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
     AMateria::use(target);
 }
 
-AMateria* Ice::clone() const {
-    AMateria* clone = new Ice;
+AMateria* Cure::clone() const {
+    AMateria* clone = new Cure;
     clone->setType(AMateria::_type);
     clone->setXp(AMateria::_xp);
     return clone;
 }
 
-void Ice::setType(std::string type) {
+void Cure::setType(std::string type) {
     AMateria::_type = type;
 }
 
-void Ice::setXp(unsigned int xp) {
+void Cure::setXp(unsigned int xp) {
     AMateria::_xp = xp;
 }
 
-std::string Ice::getType() const {
+std::string Cure::getType() const {
     return AMateria::_type;
 }
 
-unsigned int Ice::getXP() const {
+unsigned int Cure::getXP() const {
     return AMateria::_xp;
 }

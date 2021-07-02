@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:28:09 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/01 22:18:00 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:37:20 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class AMateria {
     protected:
@@ -29,6 +32,10 @@ class AMateria {
         unsigned int getXP() const;         //Returns the Materia's XP
         virtual AMateria *clone() const = 0;
         virtual void use(ICharacter &target);
+
+        void setType(std::string type);
+        void setXp(unsigned int xp);
+        
 };
 
 #endif

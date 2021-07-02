@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:29:48 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/01 22:18:01 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:47:13 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ std::string const & AMateria::getType() const {
 
 unsigned int AMateria::getXP() const {
     return this->_xp;
+}
+
+void AMateria::setType(std::string type) {
+    this->_type = type;
+}
+
+void AMateria::setXp(unsigned int xp) {
+    this->_xp = xp;
 }
