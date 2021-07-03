@@ -6,14 +6,14 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 14:47:51 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 14:48:34 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:31:52 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 #define IMATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+class AMateria;
 
 class IMateriaSource
 {

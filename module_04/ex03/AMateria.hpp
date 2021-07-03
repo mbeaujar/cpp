@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:28:09 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 15:37:20 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 23:19:57 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 class AMateria {
     protected:
-        unsigned int _xp;
         std::string _type;
-        AMateria();
+        unsigned int _xp;
         AMateria(AMateria const & copy);
         AMateria & operator=(AMateria const & copy);
+        AMateria();
     public:
         AMateria(std::string const &type);
         ~AMateria();

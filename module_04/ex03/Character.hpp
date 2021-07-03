@@ -6,16 +6,16 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:49:09 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 14:46:03 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 23:12:32 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+#include <iostream>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-#include <iostream>
 
 typedef struct s_list
 {

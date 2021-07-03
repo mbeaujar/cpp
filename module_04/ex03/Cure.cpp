@@ -6,13 +6,15 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:20:41 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 14:46:04 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:56:57 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("") {}
+Cure::Cure() : AMateria("cure") {
+	AMateria::_type = "cure";
+}
 
 Cure::Cure(std::string const & type) : AMateria(type) {
     AMateria::_type = type;
@@ -32,7 +34,7 @@ Cure & Cure::operator=(Cure const & copy) {
 
 void Cure::use(ICharacter & target) {
     //std::cout << "* shoots an Cure bolt at " << target.getName() " *" << std::endl;
-    std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
     AMateria::use(target);
 }
 

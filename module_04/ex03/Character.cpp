@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:49:03 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 15:04:39 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:40:03 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character() {}
 
-Character::Character(std::string const & name) : _name(name), _len(0), _inventory(NULL) {}
+Character::Character(std::string const & name) : _inventory(NULL), _len(0), _name(name) {}
 
 Character::Character(Character const & copy) {
     *this = copy;
@@ -91,7 +91,6 @@ void Character::equip(AMateria *m) {
 void Character::unequip(int idx)
 {
     t_list *tmp;
-    t_list *after;
 
     tmp = this->_inventory;
     if (idx < 0 || idx > 4)
@@ -120,9 +119,12 @@ void Character::use(int idx, ICharacter & target) {
     t_list *tmp;
 
     tmp = this->_inventory;
+	if (idx < 0 || idx > 4)
+		return;
     while (tmp && idx--)
         tmp = tmp->next;
-    tmp->inventory->use(target);
+	if (tmp && tmp->inventory)
+    	tmp->inventory->use(target);
 }
 
 

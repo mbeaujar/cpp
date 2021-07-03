@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:25:20 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 15:26:11 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:56:12 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     me->use(0, *bob);
     me->use(1, *bob);
     delete bob;
-    delete me;
+    delete me; 
     delete src;
     return 0;
 }

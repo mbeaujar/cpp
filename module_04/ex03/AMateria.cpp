@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:29:48 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 14:47:13 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:28:01 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ AMateria & AMateria::operator=(AMateria const & copy) {
 }
 
 void AMateria::use(ICharacter & target) {
+	(void)target;
     this->_xp += 10;
 }
 

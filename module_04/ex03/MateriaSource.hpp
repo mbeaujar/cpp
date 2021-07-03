@@ -6,16 +6,17 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 14:49:04 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/02 15:38:46 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/02 23:10:12 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include "Character.hpp"
-#include "AMateria.hpp"
+#include <iostream>
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
 
 class MateriaSource : public IMateriaSource {
     private:
