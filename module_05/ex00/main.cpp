@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:09:43 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 20:34:19 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:16:32 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ int main()
 	std::cout << bob;
 	std::cout << " * Decrement grade by 25 ... *" << std::endl;
 	bob.decrementGrade(25);
+	std::cout << bob;
+	std::cout << " * Decrement grade by 100 ... *" << std::endl;
+	bob.decrementGrade(100);
 	std::cout << bob;
 	return (0);
 }

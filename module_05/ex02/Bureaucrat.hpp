@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:11:24 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 11:55:21 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:41:45 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Bureaucrat {
 		};
 		
 		class GradeTooLowException : public std::exception {
-			public:
+			public:	
 				virtual const char* what() const throw() {
 					return "Grade Too low";
 				}

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 17:43:43 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 18:13:06 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/04 15:20:32 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/04 16:32:48 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef KAREN_HPP
+#define KAREN_HPP
 
-Pony::Pony() {
-	this->_name = "";
-}
+#include <iostream>
 
-Pony::Pony(std::string name) {
-	this->_name = name;	
-}
+class Karen {
+    private:
+    public:
+        Karen();
+        ~Karen();
 
-Pony::~Pony() {
-	std::cout << "delete -> " << this->_name << std::endl;
-	return;
-}
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
+        void complain( std::string level );
+        
+};
 
-std::string Pony::getPonyName(void) const {
-	return (this->_name);
-}
+#endif

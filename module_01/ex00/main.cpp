@@ -5,37 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 17:43:23 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 18:14:11 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/06/23 18:21:05 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/06/23 21:23:23 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
+#include <stdlib.h>
+#include <time.h>
 
-
-void ponyOnTheStack(void)
+void randomChump() 
 {
-	Pony tom("tom");
-	std::cout << "name of the pony : " << tom.getPonyName() << std::endl;
-	return;
+	std::string name[6] = { "Joseph", "Djo", "Jim",
+							"Kevin", "Eren", "David"};
+	std::string type[4] = { "Angry", "Hungry", "Enraged", "idiot"};
+	std::string color[4] = { "\033[31m", "\033[31m", "\033[34m", "\033[33m"};
+	ZombieEvent brain;
+	Zombie *zombie;
+	for (int i = 0; i < 10; i++)
+	{
+		brain.setZombieType(type[rand() % 4]);
+		zombie = brain.newZombie(name[rand() % 6]);
+		std::cout << color[rand() % 4];
+		zombie->announce();
+		delete zombie;
+	}
+	std::cout << "\033[0m";
 }
 
 
-void ponyOnTheHeap(void) 
+int main(void) 
 {
-	Pony *jim = new Pony("jim");
-	std::cout << "name of the pony : " << jim->getPonyName() << std::endl;
-	delete jim;
-	std::cout << "after the delete" << std::endl;
-	return;
-}
-
-int main(void)
-{
-	std::cout << "--- Pony on the Stack ---" << std::endl;
-	ponyOnTheStack();
-	std::cout << std::endl;
-	std::cout << "--- Pony on the Heap ---" << std::endl;
-	ponyOnTheHeap();
+	srand(time(NULL));
+	randomChump();
 	return (0);
 }

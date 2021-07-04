@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:12:17 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 20:25:41 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 14:03:46 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &d) {
 
 void Bureaucrat::incrementGrade(int inc) {
 	try {
-		gradeNorm(this->_grade + inc);
-		this->_grade += inc;
+		gradeNorm(this->_grade - inc);
+		this->_grade -= inc;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -60,8 +60,8 @@ void Bureaucrat::incrementGrade(int inc) {
 
 void Bureaucrat::decrementGrade(int dec) {
 	try {
-		gradeNorm(this->_grade - dec);
-		this->_grade -= dec;
+		gradeNorm(this->_grade + dec);
+		this->_grade += dec;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

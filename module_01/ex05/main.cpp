@@ -5,17 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 21:29:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 21:45:30 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/04 15:19:26 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/04 15:39:55 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Human.hpp"
+#include "Karen.hpp"
 
 int main()
 {
-	Human bob;
-	std::cout << bob.identify() << std::endl;
-	std::cout << bob.getBrain().identify() << std::endl;
+    Karen test;
+
+    test.complain("DEBUG");
+    test.complain("INFO");
+    test.complain("WARNING");
+    test.complain("ERROR");
+    return (0);
 }

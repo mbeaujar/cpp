@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 21:30:18 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 21:56:08 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/03 19:09:43 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/04 12:36:07 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include <sstream>
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-
-Brain::Brain() {
-	this->_iq = 100;
-}
-
-Brain::~Brain() {
-	return;
-}
-
-std::string Brain::identify() {
-	std::stringstream address;
-	address << this;
-	return (address.str());
+int main()
+{
+	Bureaucrat bob("bobby", 75);
+	Form eval("eval");
+	std::cout << bob;
+	eval.beSigned(bob);
+	bob.incrementGrade(40);
+	std::cout << bob;
+	eval.beSigned(bob);
+	std::cout << eval;
+	return (0);
 }

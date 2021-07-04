@@ -6,30 +6,22 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:09:43 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 20:34:19 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:36:07 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
 	Bureaucrat bob("bobby", 75);
+	Form eval("eval");
 	std::cout << bob;
-	std::cout << " * Increment grade by 150 ... *" << std::endl;
-	bob.incrementGrade(150);
+	eval.beSigned(bob);
+	bob.incrementGrade(40);
 	std::cout << bob;
-	std::cout << " * Increment grade by 25 ... *" << std::endl;
-	bob.incrementGrade(25);
-	std::cout << bob;
-	Bureaucrat jimmy("jimmy", 2);
-	bob = jimmy;
-	std::cout << std::endl << bob;
-	std::cout << " * Decrement grade by 1 ... *" << std::endl;
-	bob.decrementGrade(1);
-	std::cout << bob;
-	std::cout << " * Decrement grade by 25 ... *" << std::endl;
-	bob.decrementGrade(25);
-	std::cout << bob;
+	eval.beSigned(bob);
+	std::cout << eval;
 	return (0);
 }
