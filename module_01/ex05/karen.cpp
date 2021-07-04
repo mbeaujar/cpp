@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 15:20:25 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 16:33:17 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 16:43:22 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void Karen::error() {
 
 void call_fct(void (Karen::*f)()) 
 {
-    *f();
 }
 
 void Karen::complain(std::string level)
