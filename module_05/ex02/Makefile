@@ -4,7 +4,7 @@ RM = rm -f
 CC = clang++
 
 SRCS = main.cpp \
-	Bureaucrat.cpp
+	Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

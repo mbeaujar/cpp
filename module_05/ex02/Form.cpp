@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:04:58 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 12:38:00 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 20:13:17 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ void Form::beSigned(Bureaucrat &bob) {
     }
 }
 
+void Form::execute(Bureaucrat const &executor) const {
+    (void)executor;
+}
 
 // Getters
 
@@ -55,6 +58,16 @@ std::string Form::getName() const {
 
 bool Form::getSign() const {
     return this->_sign;
+}
+
+// Setters
+
+void Form::setName(std::string name) {
+    this->_name = name;
+}
+
+void Form::setSign(bool sign) {
+    this->_sign = sign;
 }
 
 // operator

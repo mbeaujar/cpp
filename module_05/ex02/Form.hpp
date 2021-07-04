@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:00:05 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 12:19:30 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 19:14:21 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,15 @@ class Form {
         
         // Methods
         void beSigned(Bureaucrat &);
+        void execute(Bureaucrat const & executor) const;
 
         // Getters
         std::string getName() const;
         bool getSign() const;
+
+        // Setters
+        void setName(std::string name);
+        void setSign(bool sign);
 
         // Exceptions
         class GradeTooHighException : public std::exception {
