@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 19:16:54 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/26 21:08:18 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:28:52 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap & operator=(ClapTrap const & rhs);
 
 		void attack(std::string & target);

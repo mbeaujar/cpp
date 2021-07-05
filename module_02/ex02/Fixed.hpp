@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 18:25:59 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/28 11:01:24 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:28:44 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed {
 		Fixed(Fixed const & rhs);
 		Fixed(int const & nb);
 		Fixed(float const & nb);
-		~Fixed();
+		virtual ~Fixed();
 		Fixed & operator=(Fixed const & rhs);
 		Fixed 	operator+(Fixed const & rhs) const;
 		Fixed 	operator-(Fixed const & rhs) const;

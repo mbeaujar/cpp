@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 16:17:00 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 16:43:59 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:29:17 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : public ClapTrap {
         FragTrap();
         FragTrap(std::string name);
         FragTrap(FragTrap const & rhs);
-        ~FragTrap();
+        virtual ~FragTrap();
 
         FragTrap & operator=(FragTrap const & rhs);
         void highFivesGuys(void);

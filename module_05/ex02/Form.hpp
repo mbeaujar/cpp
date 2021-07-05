@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:00:05 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 19:14:21 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 12:00:34 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Form {
 
         // Setters
         void setName(std::string name);
-        void setSign(bool sign);
+        void setSign(bool sign); 
 
         // Exceptions
         class GradeTooHighException : public std::exception {

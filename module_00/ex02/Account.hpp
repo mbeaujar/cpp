@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Account.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:53:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:59 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/05 14:03:10 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/05 14:05:40 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef ACCOUNT_HPP
+#define ACCOUNT_HPP
 
-#include "Enemy.hpp"
+#include <iostream>
 
-class RadScorpion : public Enemy {
+class Account {
+    private:
+        std::string _name;
     public:
-        RadScorpion();
-        RadScorpion(RadScorpion const & rhs);
-        virtual ~RadScorpion();
-        RadScorpion & operator=(RadScorpion const & rhs);
-
-        /* Getters */
-        std::string getType() const;
-        int getHP() const;
+        Account(std::string name);
+        Account(Account const&);
+        virtual ~Account();
+        Account& operator=(Account const &);
+        
+        std::string getName() const;
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 18:21:03 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 18:33:45 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:25:00 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie {
 	public:	
 		Zombie();
 		Zombie(std::string const name, std::string const type);
-		~Zombie();
+		virtual ~Zombie();
 
 		void announce() const;
 };

@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 22:08:39 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/23 23:23:18 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:26:40 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB {
 		Weapon * _gun;
 	public:
 		HumanB(std::string name);
-		~HumanB();
+		virtual ~HumanB();
 
 		void attack();
 		void setWeapon(Weapon& gun);

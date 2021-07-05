@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:53:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:59 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/05 14:04:25 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/05 14:06:08 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#include "Account.hpp"
 
-#include "Enemy.hpp"
-
-class RadScorpion : public Enemy {
-    public:
-        RadScorpion();
-        RadScorpion(RadScorpion const & rhs);
-        virtual ~RadScorpion();
-        RadScorpion & operator=(RadScorpion const & rhs);
-
-        /* Getters */
-        std::string getType() const;
-        int getHP() const;
-};
+Account::Account(std::string name) : _name(name) {}
 
 
-#endif
+Account::~Account() {}
+
+Account::Account(Account const &copy) {
+    *this = copy;
+}
+
+Account& Account::operator=(Account const & assignation) {
+    this->_name = assignation.getName();
+    return *this;
+}
+
+
+
+std::string Account::getName() const {
+    return this->_name;
+}

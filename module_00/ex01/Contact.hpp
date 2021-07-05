@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 21:00:21 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 16:37:58 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:24:26 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Contact {
 
 	public:
 		Contact(void);
-		~Contact(void);
+		virtual ~Contact(void);
 
 		void clearContact(void);
 

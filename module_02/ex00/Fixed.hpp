@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 18:25:59 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/25 20:15:09 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:27:25 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed {
 	public:
 		Fixed();
 		Fixed(Fixed const & rhs);
-		~Fixed();
+		virtual ~Fixed();
 
 		Fixed & operator=(Fixed const & rhs);
 		int getRawBits(void) const;		

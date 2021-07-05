@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 15:20:32 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 17:45:20 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:27:18 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Karen {
         void error( void );
     public:
         Karen();
-        ~Karen();
+        virtual ~Karen();
 
         void complain( std::string level );
         

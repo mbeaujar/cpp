@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 12:42:12 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 11:29:03 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/05 12:02:46 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/05 12:56:31 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
+#include <stdlib.h>
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
 
-class ShrubberyCreationForm : public Form {
+class RobotomyRequestForm : public Form {
     public:
         // Coplien form
-        ShrubberyCreationForm(std::string const &);
-        ShrubberyCreationForm(ShrubberyCreationForm const &);
-        ~ShrubberyCreationForm();
-        ShrubberyCreationForm &operator=(ShrubberyCreationForm const &);
+        RobotomyRequestForm(std::string const &);
+        RobotomyRequestForm(RobotomyRequestForm const &);
+        ~RobotomyRequestForm();
+        RobotomyRequestForm &operator=(RobotomyRequestForm const &);
 
         // Methods
         void beSigned(Bureaucrat &);

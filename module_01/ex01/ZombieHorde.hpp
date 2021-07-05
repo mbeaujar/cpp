@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 20:42:10 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 14:14:38 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:26:24 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ZombieHorde {
 		int		_len;
 	public:
 		ZombieHorde(int n, std::string name);
-		~ZombieHorde(void);
+		virtual ~ZombieHorde(void);
 };
 
 

@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Gun.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:53:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:59 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/05 14:18:39 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/05 17:10:21 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef GUN_HPP
+#define GUN_HPP
 
-#include "Enemy.hpp"
+#include "AWeapon.hpp"
+#include <iostream>
 
-class RadScorpion : public Enemy {
+class Gun : public AWeapon {
     public:
-        RadScorpion();
-        RadScorpion(RadScorpion const & rhs);
-        virtual ~RadScorpion();
-        RadScorpion & operator=(RadScorpion const & rhs);
+        Gun();
+        Gun(std::string const & name, int apcost, int damage);
+        Gun(Gun const & rhs);
+        virtual ~Gun();
+        Gun & operator=(Gun const & rhs);
 
-        /* Getters */
-        std::string getType() const;
-        int getHP() const;
+        void attack() const;      
 };
-
 
 #endif

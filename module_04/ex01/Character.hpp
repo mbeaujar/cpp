@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:29:00 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/29 16:24:11 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:09:29 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Character {
         Character();
     public:
         Character(std::string const & name);
-        ~Character();
+        virtual ~Character();
         Character(Character const & rhs);
         Character & operator=(Character const & rhs);
         void recoverAP();

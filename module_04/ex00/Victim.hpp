@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 12:02:33 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/28 14:23:03 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:30:13 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Victim {
         Victim();
         Victim(std::string name);
         Victim(Victim const & rhs);
-        ~Victim();
+        virtual ~Victim();
         Victim & operator=(Victim const & rhs);
 
         virtual void getPolymorphed() const;

@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:54:04 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/28 14:07:30 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:30:08 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Sorcerer {
     public:
         Sorcerer(std::string name, std::string title);
         Sorcerer(Sorcerer const & rhs);
-        ~Sorcerer();
+        virtual ~Sorcerer();
         Sorcerer & operator=(Sorcerer const & rhs);
         
         void polymorph(Victim const & target) const;

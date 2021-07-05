@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:33:32 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/29 14:35:15 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:17:28 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PlasmaRifle : public AWeapon {
         PlasmaRifle();
         PlasmaRifle(std::string const & name, int apcost, int damage);
         PlasmaRifle(PlasmaRifle const & rhs);
-       ~PlasmaRifle();
+        virtual ~PlasmaRifle();
         PlasmaRifle & operator=(PlasmaRifle const & rhs);
 
         void attack() const;      

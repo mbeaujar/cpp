@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:33:24 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/29 17:46:59 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/05 18:45:37 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "PlasmaRifle.hpp"
 #include "Character.hpp"
 #include "RadScorpion.hpp"
+#include "Gun.hpp"
+#include "SuperMutant.hpp"
 
 int main()
 {
@@ -34,7 +36,19 @@ int main()
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
-//    me->recoverAP();
-//    std::cout << *me;
+    //me->recoverAP();
+    //std::cout << *me;
+    Enemy *n = new SuperMutant();
+    AWeapon* gun = new Gun();
+    me->equip(gun);
+    me->attack(n);
+    delete me;
+    if (b->getHP() > 0)
+        delete b;
+    delete gun;
+   if (n->getHP() > 0)
+        delete n;
+    delete pr;
+    delete pf;
     return 0;
 }
