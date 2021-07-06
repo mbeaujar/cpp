@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:00:05 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 12:19:30 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:26:29 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form {
         // Coplien form
         Form(std::string);
         Form(Form const &);
-        ~Form();
+        virtual ~Form();
         Form & operator=(Form const &);
         
         // Methods

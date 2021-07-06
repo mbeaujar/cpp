@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 12:02:46 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/06 16:26:50 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/06 16:33:52 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/06 16:34:14 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "Form.hpp"
 #include <stdlib.h>
@@ -19,13 +19,13 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-class RobotomyRequestForm : public Form {
+class PresidentialPardonForm : public Form {
     public:
         // Coplien form
-        RobotomyRequestForm(std::string const &);
-        RobotomyRequestForm(RobotomyRequestForm const &);
-        virtual ~RobotomyRequestForm();
-        RobotomyRequestForm &operator=(RobotomyRequestForm const &);
+        PresidentialPardonForm(std::string const &);
+        PresidentialPardonForm(PresidentialPardonForm const &);
+        virtual ~PresidentialPardonForm();
+        PresidentialPardonForm &operator=(PresidentialPardonForm const &);
 
         // Methods
         void beSigned(Bureaucrat &);

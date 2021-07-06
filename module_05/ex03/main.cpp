@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:09:43 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/06 16:49:06 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/06 17:35:35 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -56,5 +57,14 @@ int main()
 	pre.execute(Joseph);
 	std::cout << "----------" << std::endl;
 	Joseph.executeForm(pre);
+	Intern billy;
+	Form *rtn;
+	rtn = billy.makeForm("robotomy request", "bender");
+	delete rtn;
+	rtn = billy.makeForm("lalalla", "oui");
+	rtn = billy.makeForm("shrubbery creation", "eric");
+	delete rtn;
+	rtn = billy.makeForm("presidential pardon", "ramzi");
+	delete rtn;
  	return (0);
 }
