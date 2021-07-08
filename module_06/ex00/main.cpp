@@ -21,8 +21,6 @@ bool check_str(std::string str)
     return true;
 }
 
-
-
 void print_error(char *argv[], bool parsing)
 {
     std::cout << "char: impossible" << std::endl;
@@ -48,20 +46,26 @@ void print_error(char *argv[], bool parsing)
 }
 
 // std::numerci_limits<double>::max();
-void toFloat(double number)
+void toFloat(char *argv[])
 {
     float nb;
-    nb = static_cast<float>(number);
     std::cout << "float: ";
-    if (nb > std::numeric_limits<float>::max() || nb < std::numeric_limits<float>::min())
-        std::cout << ((nb > 0) ? "+inff" : "-inff") << std::endl;
-    else
+    try
     {
-        if (nb == static_cast<int>(nb))
-            std::cout << nb << ".0f" << std::endl;
-        else
-            std::cout << nb << "f" << std::endl;
+        nb = std::stof(argv[1]);
     }
+    catch (std::exception &e)
+    {
+        if (argv[1][0] == '-')
+            std::cout << "-inff" << std::endl;
+        else
+            std::cout << "+inff" << std::endl;
+        return;
+    }
+    if (nb == static_cast<int>(nb))
+        std::cout << nb << ".0f" << std::endl;
+    else
+        std::cout << nb << "f" << std::endl;
 }
 
 void toChar(double number)
@@ -101,20 +105,23 @@ int main(int argc, char *argv[])
 
     if (argc != 2)
         return (1);
-    if (check_str(argv[1]) == false) {
+    if (check_str(argv[1]) == false)
+    {
         print_error(argv, true);
         return (1);
     }
-    try {
+    try
+    {
         number = std::stod(argv[1]);
     }
-    catch (std::exception &e) {
+    catch (std::exception &e)
+    {
         print_error(argv, false);
         return (1);
     }
     toChar(number);
     toInt(number);
-    toFloat(number);
+    toFloat(argv);
     toDouble(number);
     return (0);
 }
