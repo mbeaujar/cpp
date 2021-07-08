@@ -43,6 +43,12 @@ void print_error(char *argv[], bool parsing)
             std::cout << "double: +inf" << std::endl;
         }
     }
+    else
+    {
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
+    }
+    
 }
 
 // std::numerci_limits<double>::max();
