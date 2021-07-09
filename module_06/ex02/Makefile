@@ -1,4 +1,4 @@
-NAME=ex01
+NAME=a.out
 CC=clang++
 CPPFLAGS=-Wall -Wextra -Werror
 RM=rm -f
