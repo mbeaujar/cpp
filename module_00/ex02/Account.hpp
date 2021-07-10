@@ -1,31 +1,68 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Account.hpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 14:03:10 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 14:05:40 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// ************************************************************************** //
+//                                                                            //
+//                Account.hpp for GlobalBanksters United                //
+//                Created on  : Thu Nov 20 19:43:15 1989                      //
+//                Last update : Wed Jan 04 14:54:06 1992                      //
+//                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
+//                                                                            //
+// ************************************************************************** //
 
-#ifndef ACCOUNT_HPP
-#define ACCOUNT_HPP
+
+#pragma once
+#ifndef __ACCOUNT_H__
+#define __ACCOUNT_H__
 
 #include <iostream>
+#include <ctime>
+// ************************************************************************** //
+//                               Account Class                                //
+// ************************************************************************** //
 
 class Account {
-    private:
-        std::string _name;
-    public:
-        Account(std::string name);
-        Account(Account const&);
-        virtual ~Account();
-        Account& operator=(Account const &);
-        
-        std::string getName() const;
-};
 
+
+public:
+
+	typedef Account		t;
+
+	static int	getNbAccounts( void ) { return _nbAccounts; }
+	static int	getTotalAmount( void ) { return _totalAmount; }
+	static int	getNbDeposits( void ) { return _totalNbDeposits; }
+	static int	getNbWithdrawals( void ) { return _totalNbWithdrawals; }
+	static void	displayAccountsInfos( void ) { 
+		_displayTimestamp();
+		std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount;
+		std::cout << ";deposits:" << _totalNbDeposits << ";withdrawals:";
+		std::cout << _totalNbWithdrawals << std::endl;
+	}
+
+	Account( int initial_deposit );
+	~Account( void );
+
+	void	makeDeposit( int deposit );
+	bool	makeWithdrawal( int withdrawal );
+	int		checkAmount( void ) const;
+	void	displayStatus( void ) const;
+
+
+private:
+
+	static int	_nbAccounts;
+	static int	_totalAmount;
+	static int	_totalNbDeposits;
+	static int	_totalNbWithdrawals;
+
+	static void	_displayTimestamp( void ) {
+		std::cout << "[" << std::time(0) << "] ";
+	}
+
+	int				_accountIndex;
+	int				_amount;
+	int				_nbDeposits;
+	int				_nbWithdrawals;
+
+	Account( void );
+
+};
 
 #endif
