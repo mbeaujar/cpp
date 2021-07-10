@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:53:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:59 by mbeaujar         ###   ########.fr       */
+/*   Created: 2021/07/10 19:13:42 by mbeaujar          #+#    #+#             */
+/*   Updated: 2021/07/10 19:57:59 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef __ANIMAL_HPP__
+#define __ANIMAL_HPP__
 
-#include "Enemy.hpp"
+#include <iostream>
+#include "Brain.hpp"
 
-class RadScorpion : public Enemy {
-    public:
-        RadScorpion();
-        RadScorpion(RadScorpion const & rhs);
-        virtual ~RadScorpion();
-        RadScorpion & operator=(RadScorpion const & rhs);
+class Animal {
+	protected:
+		std::string type;
+	public:
+		Animal();
+		virtual ~Animal();
+		Animal(Animal const &);
+		Animal & operator=(Animal const &);
 
-        /* Getters */
-        std::string getType() const;
-        int getHP() const;
+		virtual void makeSound() const;
+		std::string getType() const;
 };
-
 
 #endif
