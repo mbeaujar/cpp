@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 19:12:57 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/10 22:45:56 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/10 22:58:21 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int main()
 	delete two;
 	//system("leaks a.out");
 	return (1);
-} */
-
-int main()
+} 
+ */
+ int main()
 {
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
@@ -69,4 +69,4 @@ int main()
 	delete i;
 	//system("leaks a.out");
 	return (0);
-}
+} 
