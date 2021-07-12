@@ -4,6 +4,6 @@
 #include <iostream>
 
 template<typename T>
-T max(T const &a, T const&b);
+T max(T const &, T const &);
 
 #endif
