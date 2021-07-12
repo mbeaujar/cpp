@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 19:12:57 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/10 22:58:21 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/12 11:41:20 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ int main()
  */
  int main()
 {
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	delete j; //should not create a leak
+	Dog *i = new Dog();
+	Cat *j = new Cat();
+
+	//IAnimal *test = new IAnimal();
 	delete i;
-	//system("leaks a.out");
+	delete j;
 	return (0);
 } 

@@ -1,10 +1,11 @@
 #ifndef __CAT_HPP__
 #define __CAT_HPP__
 
-#include "Animal.hpp"
+#include "IAnimal.hpp"
 
-class Cat : public Animal {
+class Cat : public IAnimal {
 	private:
+		std::string type;
 		Brain *brain;
 	public:
 		Cat();
@@ -14,6 +15,7 @@ class Cat : public Animal {
 
 		void makeSound() const;
 		Brain* getBrain() const;
+		std::string getType() const;
 };
 
 #endif

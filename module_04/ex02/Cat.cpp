@@ -2,7 +2,7 @@
 
 Cat::Cat()
 {
-	Animal::type = "cat";
+	this->type = "cat";
 	this->brain = new Brain;
 	std::cout << this << " Cat constructor" << std::endl;
 }
@@ -19,7 +19,7 @@ Cat::Cat(Cat const &copy)
 
 Cat& Cat::operator=(Cat const &assi)
 {
-	Animal::type = assi.getType();
+	this->type = assi.getType();
 	//delete this->brain;
 	//*(this)->brain->getIdeas() = *assi.getBrain()->getIdeas();
 	*this->brain = *assi.getBrain();
@@ -33,4 +33,8 @@ void Cat::makeSound() const
 
 Brain* Cat::getBrain() const {
 	return this->brain;
+}
+
+std::string Cat::getType() const {
+	return this->type;
 }
