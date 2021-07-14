@@ -3,7 +3,9 @@
 
 #include <iostream>
 
-template<typename T>
-T max(T const &, T const &);
+template<typename T> T& max(T &, T &);
+template<typename T> T& min(T &, T &);
+template<typename T> void swap(T &, T &);
+
 
 #endif
