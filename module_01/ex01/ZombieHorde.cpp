@@ -1,36 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 20:43:03 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 14:14:58 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Zombie.hpp"
 
-#include "ZombieHorde.hpp"
-
-ZombieHorde::ZombieHorde(int n, std::string name) {
-/* 	std::string name[6] = { "Joseph", "Djo", "Jim",
-							"Kevin", "Eren", "David"}; */
-	std::string type[4] = { "Angry", "Hungry", "Enraged", "idiot"};
-	std::string color[4] = { "\033[31m", "\033[31m", "\033[34m", "\033[33m"};
-	this->_horde = new Zombie[n];
-	for (int i = 0; i < n; i++)
-	{
-		this->_horde[i].setZombieType(type[rand() % 4]);
-		this->_horde[i].setZombieName(name);
-		std::cout << color[rand() % 4];
-		this->_horde[i].announce();
+Zombie* zombieHorde(int n, std::string name) {
+	Zombie *a;
+	try {
+		a = new Zombie[n];
+	} catch (std::bad_alloc) {
+		std::cout << "Bad alloc" << std::endl;
+		return NULL;
 	}
-	std::cout << "\033[0m";
-	this->_len = n;
-	return;
-}
-
-ZombieHorde::~ZombieHorde(void) {
-	delete [] this->_horde;
-	return;
+	for (int i = 0; i < n; ++i)
+		a[i].setName(name);
+	return a;
 }

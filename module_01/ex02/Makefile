@@ -1,25 +1,24 @@
-NAME = replace
-CC = clang++
+NAME = a.out
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
+CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
-%.o : %.cpp
-	@$(CC) $(CFLAGS) $< -c -o $@
+%.o : %.cpp	
+	$(CC) $(CFLAGS) $< -c -o $@
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(OBJS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 clean : 
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) $(NAME)
-
+	$(RM) $(NAME)
 
 re : fclean all

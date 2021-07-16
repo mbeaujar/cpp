@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 20:41:05 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 14:15:27 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
-#include "ZombieHorde.hpp"
-#include <stdlib.h>
-#include <time.h>
 
-int main(void)
+
+int main() 
 {
-	srand(time(NULL));
-	ZombieHorde horde(10, "Joseph");
-	return (1);
+	Zombie *a = zombieHorde(10, "Joe");
+	for (int i = 0; i < 10; ++i)
+		a->announce();
+	delete [] a;
+	return (0);
 }
