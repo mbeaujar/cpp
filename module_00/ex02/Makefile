@@ -3,7 +3,7 @@ CFLAGS= -Wall -Wextra -Werror -std=c++98
 CC=clang++
 RM=rm -f
 
-SRCS = test.cpp Account.cpp
+SRCS = tests.cpp Account.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
