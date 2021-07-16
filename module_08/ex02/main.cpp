@@ -16,11 +16,15 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
+	std::cout << "list: " << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
 	std::stack<int> s(mstack);
+	std::cout << "top mstack: " << mstack.top() << std::endl;
+	std::cout << "top s: " << s.top() << std::endl;
+	std::cout << "size s: " << s.size() << std::endl;
 	return 0;
 }

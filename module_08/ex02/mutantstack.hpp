@@ -9,13 +9,17 @@ class MutantStack : public std::stack<T> {
 	public:
 		typedef typename std::deque<T>::iterator iterator;
 
-		MutantStack();
+		MutantStack() : std::stack<T>() {};
 		MutantStack(MutantStack const &);
-		virtual ~MutantStack();
+		virtual ~MutantStack() {};
 		MutantStack& operator=(MutantStack const &);
 
-		iterator begin();
-		iterator end();
+		iterator begin() {
+			return std::stack<T>::c.begin();
+		};
+		iterator end() {
+			return std::stack<T>::c.end();
+		};
 };
 
 
