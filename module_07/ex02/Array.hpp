@@ -15,7 +15,7 @@ class Array {
 		Array(Array const &copy) {
 			*this = copy;
 		};
-		~Array() {
+		virtual ~Array() {
 			delete [] this->_array;
 		};
 
