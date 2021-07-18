@@ -2,7 +2,7 @@ NAME=a.out
 CC=clang++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 RM=rm -f
-SRCS = main.cpp karen.cpp
+SRCS = main.cpp Karen.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o : %.cpp 
