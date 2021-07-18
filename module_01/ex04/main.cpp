@@ -23,7 +23,8 @@ int main(int argc, char *argv[])
 		std::cout << "Error : can't open the file in argument" << std::endl;
 		return (1);
 	}
-	std::ofstream newfile(argv[1] + static_cast<std::string>(".replace"));
+	line = argv[1] + static_cast<std::string>(".replace");
+	std::ofstream newfile(line.data());
 	while (std::getline(file, line))
 	{
 		content.append(line);
