@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 15:20:25 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/18 12:06:32 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/18 12:10:53 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Karen::Karen() {}
 
 Karen::~Karen() {}
 
-// Methods
+// Method
 
 void Karen::debug() {
     std::cout <<  "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
