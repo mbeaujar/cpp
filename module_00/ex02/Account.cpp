@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:04:25 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/10 17:54:20 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/18 11:52:11 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool Account::makeWithdrawal(int withdrawal) {
 		this->_amount -= withdrawal;
 		this->_nbWithdrawals++;
 		this->_totalNbWithdrawals++;
-		std::cout << ";withdrawal" << withdrawal << ";amount" << this->_amount << ";nb_witdhrawals:" << this->_nbWithdrawals << std::endl;
+		std::cout << ";withdrawal" << withdrawal << ";amount:" << this->_amount << ";nb_witdhrawals:" << this->_nbWithdrawals << std::endl;
 		return true;
 	}
 	std::cout << ";withdrawal:refused" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 15:20:25 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 17:52:28 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/18 11:58:59 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void Karen::error() {
     std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void Karen::complain(std::string level)
+/* void Karen::complain(std::string level)
 {
     int display = 0;
     void (Karen::*f[])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
@@ -55,4 +55,45 @@ void Karen::complain(std::string level)
     if (display == 0) {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
+} */
+
+int whichLevel(std::string level)
+{
+	if (level == "DEBUG")
+		return 4;
+	if (level == "INFO")
+		return 3;
+	if (level == "WARNING")
+		return 2;
+	if (level == "ERROR")
+		return 1;
+	return 5;
+}
+
+void Karen::complain(std::string level)
+{
+	switch (whichLevel(level))
+	{
+		case 5:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+		case 4:
+			this->debug();
+			this->info();
+			this->warning();
+			this->error();
+			break;
+		case 3:
+			this->info();
+			this->warning();
+			this->error();
+			break;
+		case 2:
+			this->warning();
+			this->error();
+			break;
+		case 1:
+			this->error();
+			break;
+	}
 }
