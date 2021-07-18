@@ -15,5 +15,6 @@ int main(void)
 	stringREF = "New content";
 	std::cout << "string : " << string << std::endl;
 	std::cout << "stringPTR : " << *stringPTR << std::endl;
+	std::cout << "stringPTR : " << stringREF << std::endl;
 	return (1);
 }

@@ -1,60 +1,45 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 23:25:26 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/16 18:40:02 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <fstream>
-#include <cstdio>
-
-int ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 int main(int argc, char *argv[])
 {
-	if (argc != 4 || static_cast<std::string>(argv[2]) == "" || static_cast<std::string>(argv[3]) == "")
-		return (1);
+	std::string find;
+	std::string replace;
+	std::string line;
+	std::string content = "";
 	std::ifstream file;
+	size_t 		pos;
+	int 	len_find;
+
+	if (argc != 4)
+		return (1);
+	find = argv[2];
+	replace = argv[3];
+	len_find = find.length();
+	if (find == "" || replace == "")
+		return (1);
 	file.open(argv[1]);
-	if (!file)
-	{
+	if (!file) {
 		std::cout << "Error : can't open the file in argument" << std::endl;
 		return (1);
 	}
-	std::string replace = ".replace";
-	std::string newfilename = argv[1] + replace;
-	std::ofstream newfile(newfilename);
-	std::string content;
-	int len = ft_strlen(argv[2]);
-	
-	size_t pos;
-	std::string newcontent;
-	while (std::getline(file, content))
+	std::ofstream newfile(argv[1] + static_cast<std::string>(".replace"));
+	while (std::getline(file, line))
 	{
-		while ((pos = content.find(argv[2])) != std::string::npos)
-		{
-			newcontent = content.substr(0, pos);
-			newcontent += argv[3];
-			newcontent += content.substr(pos + len, content.length() - (pos + len));
-			content = newcontent;
-		}
-		newfile << content << std::endl;
+		content.append(line);
+		if (!file.eof())
+			content.append("\n");
 	}
-	file.close();
-	newfile.close();
+	if (find != replace) 
+	{
+		while ((pos = content.find(find)) != std::string::npos)
+		{
+			line = content.substr(0, pos);
+			line += replace;
+			line += content.substr(pos + len_find, content.length() - (pos + len_find));
+			content = line;
+		}
+	}
+	newfile << content;
 	return (0);
 }

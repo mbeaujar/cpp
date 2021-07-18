@@ -7,15 +7,13 @@ class Zombie {
 	private:
 		std::string _name;
 	public:
-		Zombie() : _name("") {};
+		Zombie();
 		Zombie(std::string name);
 		virtual ~Zombie();
 
 		void announce() const;
 
-		void setName(std::string name) {
-			this->_name = name;
-		};
+		void setName(std::string name);
 };
 
 Zombie* zombieHorde(int n, std::string name);
