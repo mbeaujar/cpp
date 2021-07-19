@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 15:20:25 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/18 12:10:57 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/19 15:26:06 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,17 @@ void Karen::complain(std::string level)
 {
 	switch (whichLevel(level))
 	{
-		case 5:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break;
 		case 4:
 			this->debug();
-			this->info();
-			this->warning();
-			this->error();
-			break;
 		case 3:
 			this->info();
-			this->warning();
-			this->error();
-			break;
 		case 2:
 			this->warning();
-			this->error();
-			break;
 		case 1:
 			this->error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break;
 	}
 }
