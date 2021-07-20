@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 19:54:42 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 20:09:08 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/19 22:41:48 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
- 	std::cout << " ------- EX00 --------" << std::endl;
+/*  	std::cout << " ------- EX00 --------" << std::endl;
  	ClapTrap jim("jim");
 	std::string enemy = "bob";
 	jim.setEnergyPoints(30);
@@ -36,7 +36,8 @@ int main()
 	bob.attack(enemy);
 	std::cout << " ------- EX02 --------" << std::endl;
 	FragTrap Jean("Jean");
-	Jean.highFivesGuys(); 
+	Jean.highFivesGuys();  */
+	std::string enemy = "Jimmy";
 	std::cout << " ------- EX03 --------" << std::endl;
 	DiamondTrap billy("billy");
 	billy.whoAmI();

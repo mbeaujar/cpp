@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 19:17:18 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/26 21:11:02 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/19 22:27:24 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,31 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
 }
 
 ClapTrap::ClapTrap() : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "FR4G-TP ??? is back." << std::endl;
+	std::cout << "ClapTrap ??? is back." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "FR4G-TP " << name << " is back." << std::endl;
+	std::cout << "ClapTrap " << name << " is back." << std::endl;
 }
 
 
 ClapTrap::~ClapTrap() {
-	std::cout << "FR4G-TP " << this->_name << " died." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " died." << std::endl;
 }
 
 void ClapTrap::attack(std::string & target) {
-	if (this->_energyPoints > 10) {
-		std::cout << "FR4G-TP " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	if (this->_energyPoints >= 10) {
+		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints -= 10;
 		this->_hitPoints = 25;
 	}
 	else
-		std::cout << "FR4G-TP " << this->_name << " does not have enough points." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " does not have enough points." << std::endl;
 }
 
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	std::cout << "FR4G-TP " << this->_name << " has taken " << amount << " damage." << std::endl; 
+	std::cout << "ClapTrap " << this->_name << " has taken " << amount << " damage." << std::endl; 
 }
 
 void ClapTrap::setDamage(unsigned int amount) {
@@ -57,7 +57,7 @@ void ClapTrap::setEnergyPoints(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "FR4G-TP " << this->_name << " has healed " << amount << " points." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has healed " << amount << " points." << std::endl;
 }
 
 const std::string & ClapTrap::getname(void) const {

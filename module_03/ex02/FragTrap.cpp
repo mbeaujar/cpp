@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 16:18:14 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/06/27 16:45:49 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/19 22:32:12 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap() {
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDamage = 30;
-    std::cout << "FR4G-TP " << this->_name << " is coming." << std::endl;
+    std::cout << "FragTrap " << this->_name << " is coming." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) {
@@ -25,11 +25,11 @@ FragTrap::FragTrap(std::string name) {
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDamage = 30;
-    std::cout << "FR4G-TP " << this->_name << " is coming." << std::endl;
+    std::cout << "FragTrap " << this->_name << " is coming." << std::endl;
 }
 
 FragTrap::~FragTrap() {
-    std::cout << "FR4G-TP " << this->_name << " died." << std::endl;
+    std::cout << "FragTrap " << this->_name << " died." << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & rhs) {
