@@ -1,5 +1,5 @@
 NAME = a.out
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 RM = rm -f
 CC = clang++
 

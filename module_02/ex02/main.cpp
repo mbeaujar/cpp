@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	Fixed a;
+/* 	Fixed a;
 	Fixed const b(Fixed(5.05f) * Fixed(2));
 	std::cout << "--- increment:" << std::endl;
 	std::cout << a << std::endl;
@@ -32,7 +32,10 @@ int main(void)
 	std::cout << (a != Fixed(a.toFloat())) << std::endl;
 	std::cout << "--- min & max:" << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
-	std::cout << Fixed::min(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl; */
+	Fixed a(10);
+
+	std::cout << a << std::endl;
 
 	return 0;
 }

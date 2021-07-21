@@ -47,6 +47,8 @@ std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
 }
 
 float Fixed::toFloat(void) const {
+	std::cout << "value: " << std::bitset<16>(this->_value) << std::endl;
+	std::cout << "div: " << std::bitset<16>(1 << this->_fractional_bits) << std::endl;
 	return ((float)this->_value / (float)(1 << this->_fractional_bits));
 }
 
