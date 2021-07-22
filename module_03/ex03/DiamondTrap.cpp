@@ -1,54 +1,45 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 16:54:56 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/20 17:47:53 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
-{
+// Coplien Form
+
+DiamondTrap::DiamondTrap() : ClapTrap("DiamondTrap_clap_name"), _name("DiamondTrap_name") {
+    this->setHitPoints(100);
+    this->setEnergyPoints(50);
+    this->setAttackDamage(30);
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
-{
-    this->_name = name;
-    //ClapTrap::_name = name + "_clap_name";
-    std::cout << "NAME : " << ClapTrap::_name << std::endl;
-	this->_hitPoints = FragTrap::_hitPoints;
-    this->_attackDamage = FragTrap::_attackDamage;
-    this->_energyPoints = ScavTrap::_energyPoints;
-    //std::cout << "hitpoints : " << this->_hitPoints << std::endl;
-    //std::cout << "energyPoints : " << this->_energyPoints << std::endl;
-    //std::cout << "attackDamage : " << this->_attackDamage << std::endl;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name) {
+    this->setHitPoints(100);
+    this->setEnergyPoints(50);
+    this->setAttackDamage(30);
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const & rhs)
-{
-    *this = rhs;
+DiamondTrap::DiamondTrap(DiamondTrap const &copy) : ClapTrap(copy.getName() + "_clap_name") {
+    *this = copy;
 }
 
-DiamondTrap::~DiamondTrap()
-{
-}
+DiamondTrap::~DiamondTrap() {}
 
-DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
-{
-    this->_name = rhs.getname();
-    this->_hitPoints = rhs.gethitPoints();
-    this->_energyPoints = rhs.getenergyPoints();
-    this->_attackDamage = rhs.getattackDamage();
+DiamondTrap& DiamondTrap::operator=(DiamondTrap const &copy) {
+    if (this == &copy)
+        return *this;
+    this->_name = copy.getName();
+    this->setName(copy.getName() + "_clap_name");
+    this->setHitPoints(copy.getHitPoints());
+    this->setEnergyPoints(copy.getEnergyPoints());
+    this->setAttackDamage(copy.getAttackDamage());
     return *this;
 }
 
-void DiamondTrap::whoAmI() 
-{
-    std::cout << "My name : " << this->_name << std::endl;
-    std::cout << "ClapTrap name : " << ClapTrap::_name << std::endl;
+// Methods
+
+void DiamondTrap::whoAmI() {
+    std::cout << "name: " << this->_name << std::endl;
+    std::cout << "ClapTrap name: " << ClapTrap::getName() << std::endl;
+}
+
+
+// Getters
+std::string DiamondTrap::getName() const {
+    return DiamondTrap::_name;
 }

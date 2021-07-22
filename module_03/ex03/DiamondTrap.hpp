@@ -1,36 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 16:49:29 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/05 14:29:46 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef __DIAMONDTRAP_HPP__
+#define __DIAMONDTRAP_HPP__
 
-#ifndef _DIAMONDTRAP_HPP_
-# define _DIAMONDTRAP_HPP_
-
-#include <iostream>
-#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include <iostream>
 
-class DiamondTrap : public FragTrap , public ScavTrap {
+class DiamondTrap;
+
+class DiamondTrap : public FragTrap, public ScavTrap {
     private:
         std::string _name;
     public:
+        // Coplien Form
         DiamondTrap();
         DiamondTrap(std::string name);
-        DiamondTrap(DiamondTrap const & rhs);
+        DiamondTrap(DiamondTrap const &);
         virtual ~DiamondTrap();
+        DiamondTrap& operator=(DiamondTrap const &);
 
-        DiamondTrap & operator=(DiamondTrap const & rhs);
+        // Methods
         void whoAmI();
-       // ScavTrap::attack();
-      
-};
 
+        // Getters
+        std::string getName() const;
+
+};
 
 #endif

@@ -1,10 +1,10 @@
 NAME = a.out
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS = -Wshadow -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 CC = clang++
 
 SRCS = main.cpp \
-	ClapTrap.cpp  \
+	ClapTrap.cpp \
 	ScavTrap.cpp \
 	FragTrap.cpp \
 	DiamondTrap.cpp
