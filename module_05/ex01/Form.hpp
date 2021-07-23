@@ -20,7 +20,9 @@ class Bureaucrat;
 
 class Form {
     private:
-        std::string _name;
+        const std::string _name;
+        const int _executed;
+        const int _signed;
         bool _sign;
     public:
         // Coplien form
@@ -32,9 +34,14 @@ class Form {
         // Methods
         void beSigned(Bureaucrat &);
 
+        // Setters
+        void setSign(bool is);
+
         // Getters
         std::string getName() const;
         bool getSign() const;
+        int getExecuted() const;
+        int getSigned() const;
 
         // Exceptions
         class GradeTooHighException : public std::exception {

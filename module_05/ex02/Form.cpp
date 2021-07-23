@@ -18,8 +18,6 @@ Form::Form(std::string name) : _name(name) {
     this->_sign = false;
 }
 
-
-
 Form::Form(Form const &copy) {
     *this = copy;
 }
@@ -45,9 +43,6 @@ void Form::beSigned(Bureaucrat &bob) {
     }
 }
 
-void Form::execute(Bureaucrat const &executor) const {
-    (void)executor;
-}
 
 // Getters
 

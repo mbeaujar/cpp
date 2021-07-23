@@ -32,6 +32,8 @@ Bureaucrat::~Bureaucrat() {}
 
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const &assignation) {
+	if (this == &assignation)
+		return *this;
 	try {
 		gradeNorm(assignation.getGrade());
 		this->_grade = assignation.getGrade();

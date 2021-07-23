@@ -31,7 +31,7 @@ class Form {
         
         // Methods
         void beSigned(Bureaucrat &);
-        virtual void execute(Bureaucrat const & executor) const;
+        virtual void execute(Bureaucrat const & executor) const = 0;
 
         // Getters
         std::string getName() const;

@@ -14,21 +14,16 @@
 
 // Coplien form
 
-Form::Form(std::string name) : _name(name) {
-    this->_sign = false;
-}
+Form::Form(std::string name) : _name(name), _executed(25), _signed(70), _sign(false) {}
 
-
-
-Form::Form(Form const &copy) {
-    *this = copy;
-}
+Form::Form(Form const &copy) : _name(copy.getName()), _executed(copy.getExecuted()), _signed(copy.getSigned()) {}
 
 Form::~Form() {}
 
 Form & Form::operator=(Form const &assignation) {
-    this->_name = assignation.getName();
-    this->_sign = assignation.getSign();
+    if (this == &assignation)
+        return *this;
+    //this->_sign = assignation.getSign();
     return *this;
 }
 
@@ -36,7 +31,7 @@ Form & Form::operator=(Form const &assignation) {
 
 void Form::beSigned(Bureaucrat &bob) {
     try {
-        if (bob.getGrade() > 70)
+        if (bob.getGrade() > this->_signed)
             throw Form::GradeTooLowException();
         this->_sign = true;
         bob.signForm(*this, "");
@@ -45,6 +40,12 @@ void Form::beSigned(Bureaucrat &bob) {
     }
 }
 
+
+// Setters
+
+void Form::setSign(bool is) {
+    this->_sign = is;
+}
 
 // Getters
 
@@ -56,6 +57,15 @@ std::string Form::getName() const {
 bool Form::getSign() const {
     return this->_sign;
 }
+
+int Form::getExecuted() const {
+    return this->_executed;
+}
+
+int Form::getSigned() const {
+    return this->_signed;
+}
+
 
 // operator
 

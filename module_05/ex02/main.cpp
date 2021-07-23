@@ -18,17 +18,11 @@
 
 int main()
 {
-	Bureaucrat bob("bobby", 75);
-	Form eval("eval");
-	std::cout << bob;
-	eval.beSigned(bob);
-	bob.incrementGrade(40);
-	std::cout << bob;
-	eval.beSigned(bob);
-	std::cout << eval;
 	std::cout << "-------------- TREES ---------------" << std::endl;
-	ShrubberyCreationForm trees(bob.getName());
+	Bureaucrat bob("bobby", 75);
+	ShrubberyCreationForm trees(bob.getName() + "_form");
 	std::cout << bob;
+	//trees.beSigned(bob);
 	std::cout << " - try to execute" << std::endl;
 	trees.execute(bob);
 	Bureaucrat jim("jim", 137);
