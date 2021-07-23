@@ -1,19 +1,27 @@
-#ifndef __WRONGWrongAnimal_HPP__
-#define __WRONGWrongAnimal_HPP__
+#ifndef __WRONGANIMAL_HPP__
+#define __WRONGANIMAL_HPP__
 
 #include <iostream>
 
-class WrongAnimal {
-	protected:
-		std::string type;
-	public:
-		WrongAnimal();
-		virtual ~WrongAnimal();
-		WrongAnimal(WrongAnimal const &);
-		WrongAnimal & operator=(WrongAnimal const &);
+class WrongAnimal;
 
-		virtual void makeSound() const;
-		std::string getType() const;
+class WrongAnimal {
+    protected:
+        std::string type;
+    public:
+        // Coplien Form
+        WrongAnimal();
+        WrongAnimal(std::string);
+        WrongAnimal(WrongAnimal const &);
+        virtual ~WrongAnimal();
+        WrongAnimal& operator=(WrongAnimal const &);
+
+        // Methods
+        virtual void makeSound() const;
+
+        // Getters
+        std::string getType() const;
 };
+
 
 #endif

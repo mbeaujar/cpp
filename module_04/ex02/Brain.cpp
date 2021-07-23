@@ -1,26 +1,36 @@
 #include "Brain.hpp"
 
-Brain::Brain() {
-	std::cout << this << " Brain constructor" << std::endl;
-}
+// Coplien Form
 
-Brain::~Brain() {
-	std::cout << this << " Brain destructor" << std::endl;
+Brain::Brain() {
+    std::cout << "Brain created" << std::endl;
+    for (int i = 0; i < 100; ++i)
+        this->ideas[i] = "Food";
 }
 
 Brain::Brain(Brain &copy) {
-	*this = copy;
+    std::cout << "Brain created" << std::endl;
+    std::string *tmp = copy.getIdeas();
+    for (int i = 0; i < 100; ++i)
+        this->ideas[i] = tmp[i];
 }
 
-Brain& Brain::operator=(Brain &assi) {
-	std::string *tmp = assi.getIdeas();
-	for (int i = 0; i<100; i++)
-		this->ideas[i] = tmp[i];
-	//this->ideas = assi.getIdeas();
-	(void)assi;
-	return *this;
+Brain::~Brain() {
+    std::cout << "Brain died" << std::endl;
 }
 
-std::string* Brain::getIdeas() {
-	return this->ideas;
+Brain &Brain::operator=(Brain &copy) {
+    if (this == &copy)
+        return *this;
+    std::string *tmp = copy.getIdeas();
+    for (int i = 0; i < 100; ++i)
+        this->ideas[i] = tmp[i];
+    return *this;
+}
+
+
+// Getters
+
+std::string *Brain::getIdeas() {
+    return this->ideas;
 }

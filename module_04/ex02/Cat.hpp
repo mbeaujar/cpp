@@ -1,21 +1,28 @@
 #ifndef __CAT_HPP__
 #define __CAT_HPP__
 
-#include "IAnimal.hpp"
+#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public IAnimal {
-	private:
-		std::string type;
-		Brain *brain;
-	public:
-		Cat();
-		virtual ~Cat();
-		Cat(Cat const &copy);
-		Cat& operator=(Cat const &assi);
+class Cat;
 
-		void makeSound() const;
-		Brain* getBrain() const;
-		std::string getType() const;
+class Cat : public Animal {
+    private:
+        Brain *brain;
+    public:
+        // Coplien Form
+        Cat();
+        Cat(Cat const &);
+        virtual ~Cat();
+        Cat& operator=(Cat const &);
+
+        // Methods
+        void makeSound() const;
+
+        // Getters
+        Brain* getBrain() const;
 };
+
 
 #endif

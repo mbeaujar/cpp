@@ -1,24 +1,29 @@
 #include "Cat.hpp"
 
-Cat::Cat()
-{
-	Animal::type = "cat";
-};
+// Coplien Form
 
-Cat::~Cat() {}
+Cat::Cat() : Animal("Cat") {
+    std::cout << "Cat called" << std::endl;
+}
 
-Cat::Cat(Cat const &copy)
-{
-	*this = copy;
-};
+Cat::Cat(Cat const &copy) : Animal(copy.getType()) {
+    std::cout << "Cat called" << std::endl;
+}
 
-Cat& Cat::operator=(Cat const &assi)
-{
-	Animal::type = assi.getType();
-	return *this;
-};
+Cat::~Cat() {
+    std::cout << "Cat died" << std::endl;
+}
 
-void Cat::makeSound() const
-{
-	std::cout << "Grrr...." << std::endl;
-};
+
+Cat& Cat::operator=(Cat const &copy) {
+    if (this == &copy)
+        return *this;
+    this->type = copy.getType();
+    return *this;
+}
+
+// Methods
+
+void Cat::makeSound() const {
+    std::cout << "Grrrrrr ...." << std::endl;
+}

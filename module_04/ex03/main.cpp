@@ -1,27 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 19:25:20 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 14:56:12 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
-#include "Character.hpp"
-#include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {
     IMateriaSource *src = new MateriaSource();
-    src->learnMateria(new Ice());
+     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter *me = new Character("me");
     AMateria *tmp;

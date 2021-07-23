@@ -1,31 +1,40 @@
 #include "Dog.hpp"
 
-Dog::Dog() {
-	Animal::type = "dog";
-	this->brain = new Brain;
-	std::cout << this << " Dog constructor" << std::endl;
+// Coplien Form
+
+Dog::Dog() : Animal("Dog") {
+    this->brain = new Brain();
+    std::cout << "Dog called" << std::endl;
+}
+
+Dog::Dog(Dog const &copy) : Animal(copy.getType()) {
+    this->brain = new Brain();
+    *this->brain = *copy.getBrain();
+    std::cout << "Dog called" << std::endl;
 }
 
 Dog::~Dog() {
-	delete this->brain;
-	std::cout << this << " Dog destructor" << std::endl;
+    delete this->brain;
+    std::cout << "Dog died" << std::endl;
 }
 
-Dog::Dog(Dog const &copy) {
-	*this = copy;
+
+Dog& Dog::operator=(Dog const &copy) {
+    if (this == &copy)
+        return *this;
+    *this->brain = *copy.getBrain();
+    this->type = copy.getType();
+    return *this;
 }
 
-Dog& Dog::operator=(Dog const &assi) {
-	Animal::type = assi.getType();
-	//delete this->brain;
-	*this->brain = *assi.getBrain();
-	return *this;
-}
+// Methods
 
 void Dog::makeSound() const {
-	std::cout << "WAF WAF !!" << std::endl;
+    std::cout << "WOUAF WOUAF !" << std::endl;
 }
 
-Brain* Dog::getBrain() const {
-	return this->brain;
+// Getters
+
+Brain *Dog::getBrain() const {
+    return this->brain;
 }

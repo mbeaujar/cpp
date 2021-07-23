@@ -30,9 +30,9 @@ Animal& Animal::operator=(Animal const &copy)
 
 // Methods
 
-void Animal::makeSound() const {
+/* void Animal::makeSound() const {
     std::cout << "BIP BIP" << std::endl;
-}
+} */
 
 // Getters
 

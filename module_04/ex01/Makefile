@@ -3,8 +3,8 @@ CC=clang++
 CPPFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 SRCS= main.cpp \
-	Dog.cpp \
 	Animal.cpp \
+	Dog.cpp \
 	Cat.cpp \
 	WrongAnimal.cpp \
 	WrongCat.cpp \

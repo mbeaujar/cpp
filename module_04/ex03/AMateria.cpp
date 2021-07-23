@@ -1,52 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 19:29:48 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 14:28:01 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "AMateria.hpp"
 
-AMateria::AMateria() {}
+// Coplien Form
 
-AMateria::AMateria(std::string const & type) : _type(type), _xp(0) {}
+AMateria::AMateria() : _type("") {}
 
-AMateria::~AMateria() {}
+AMateria::AMateria(std::string const &type) : _type(type) {}
 
-AMateria::AMateria(AMateria const & copy) {
+AMateria::AMateria(AMateria const &copy) {
     *this = copy;
 }
 
-AMateria & AMateria::operator=(AMateria const & copy) {
-   this->_xp = copy.getXP();
-   this->_type = copy.getType();
-   return *this;
+AMateria::~AMateria() {}
+
+
+AMateria &AMateria::operator=(AMateria const &copy) {
+    if (this == &copy)
+        return *this;
+    this->_type = copy.getType();
+    return *this;
 }
 
-void AMateria::use(ICharacter & target) {
-	(void)target;
-    this->_xp += 10;
+// Methods
+
+void AMateria::use(ICharacter &target) {
+    (void)target;
 }
 
-/* Getters */
-
-std::string const & AMateria::getType() const {
+// Getters
+std::string const &AMateria::getType() const {
     return this->_type;
-}
-
-unsigned int AMateria::getXP() const {
-    return this->_xp;
-}
-
-void AMateria::setType(std::string type) {
-    this->_type = type;
-}
-
-void AMateria::setXp(unsigned int xp) {
-    this->_xp = xp;
 }

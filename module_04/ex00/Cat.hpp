@@ -1,16 +1,22 @@
 #ifndef __CAT_HPP__
 #define __CAT_HPP__
 
+#include <iostream>
 #include "Animal.hpp"
 
-class Cat : public Animal {
-	public:
-		Cat();
-		virtual ~Cat();
-		Cat(Cat const &copy);
-		Cat& operator=(Cat const &assi);
+class Cat;
 
-		void makeSound() const;
+class Cat : public Animal {
+    public:
+        // Coplien Form
+        Cat();
+        Cat(Cat const &);
+        virtual ~Cat();
+        Cat& operator=(Cat const &);
+
+        // Methods
+        void makeSound() const;
 };
+
 
 #endif

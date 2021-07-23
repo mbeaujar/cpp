@@ -3,11 +3,11 @@ CC=clang++
 CPPFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 SRCS= main.cpp \
-	Animal.cpp \
-	Dog.cpp \
-	Cat.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp 
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	MateriaSource.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

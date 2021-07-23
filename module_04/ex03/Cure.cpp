@@ -1,62 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 22:20:41 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 14:56:57 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure") {
-	AMateria::_type = "cure";
-}
+// Coplien Form
 
-Cure::Cure(std::string const & type) : AMateria(type) {
-    AMateria::_type = type;
-}
+Cure::Cure() : AMateria("cure") {}
+
+Cure::Cure(Cure const &copy) : AMateria(copy.getType()) {}
 
 Cure::~Cure() {}
 
-Cure::Cure(Cure const & copy) {
-    *this = copy;
-}
-
-Cure & Cure::operator=(Cure const & copy) {
-    this->setType(copy.getType());
-    this->setXp(copy.getXP());
+Cure &Cure::operator=(Cure const &copy) {
+    AMateria::operator=(copy);
     return *this;
 }
 
-void Cure::use(ICharacter & target) {
-    //std::cout << "* shoots an Cure bolt at " << target.getName() " *" << std::endl;
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-    AMateria::use(target);
+// Methods
+
+AMateria *Cure::clone() const {
+    return new Cure();
 }
 
-AMateria* Cure::clone() const {
-    AMateria* clone = new Cure;
-    clone->setType(AMateria::_type);
-    clone->setXp(AMateria::_xp);
-    return clone;
-}
-
-void Cure::setType(std::string type) {
-    AMateria::_type = type;
-}
-
-void Cure::setXp(unsigned int xp) {
-    AMateria::_xp = xp;
-}
-
-std::string Cure::getType() const {
-    return AMateria::_type;
-}
-
-unsigned int Cure::getXP() const {
-    return AMateria::_xp;
+void Cure::use(ICharacter &target) {
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

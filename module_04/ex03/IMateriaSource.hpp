@@ -1,26 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 14:47:51 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/03 14:31:52 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef __IMATERIASOURCE_HPP__
+#define __IMATERIASOURCE_HPP__
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#include "AMateria.hpp"
+#include <iostream>
 
-class AMateria;
+class IMateriaSource;
 
-class IMateriaSource
-{
-public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria *) = 0;
-    virtual AMateria *createMateria(std::string const &type) = 0;
+class IMateriaSource {
+    public:
+        virtual ~IMateriaSource() {}
+        virtual void learnMateria(AMateria *) = 0;
+        virtual AMateria *createMateria(std::string const &type) = 0;
 };
 
 #endif

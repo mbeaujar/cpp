@@ -3,16 +3,21 @@
 
 #include <iostream>
 
-class Brain {
-	private:
-		std::string ideas[100];
-	public:
-		Brain();
-		Brain(Brain &);
-		virtual ~Brain();
-		Brain& operator=(Brain &);
+class Brain;
 
-		std::string* getIdeas();
+class Brain {
+    private:
+        std::string ideas[100];
+    public:
+        // Coplien Form
+        Brain();
+        Brain(Brain &);
+        virtual ~Brain();
+        Brain &operator=(Brain &);
+
+        // Getters
+        std::string *getIdeas();
 };
+
 
 #endif
