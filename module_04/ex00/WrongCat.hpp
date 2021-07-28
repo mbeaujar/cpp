@@ -2,11 +2,11 @@
 #define __WRONGCAT_HPP__
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 class WrongCat;
 
-class WrongCat : public Animal {
+class WrongCat : public WrongAnimal {
     public:
         // Coplien Form
         WrongCat();

@@ -2,11 +2,11 @@
 
 // Coplien Form
 
-WrongCat::WrongCat() : Animal("WrongCat") {
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
     std::cout << "WrongCat called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &copy) : Animal(copy.getType()) {
+WrongCat::WrongCat(WrongCat const &copy) : WrongAnimal(copy.getType()) {
     std::cout << "WrongCat called" << std::endl;
 }
 

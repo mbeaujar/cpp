@@ -4,8 +4,7 @@ int main()
 {
 	{
 		Array<int> a;
-		try
-		{
+		try {
 			std::cout << a[10] << std::endl;
 		}
 		catch (std::exception &e)

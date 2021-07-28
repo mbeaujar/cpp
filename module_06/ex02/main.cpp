@@ -60,7 +60,7 @@ void identify_from_reference(Base &p)
 	else if (dynamic_cast<C *>(&p))
 		std::cout << "C" << std::endl;
 }
-
+ 
 int main()
 {
 	struct timeval time;

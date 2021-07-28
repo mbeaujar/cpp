@@ -20,7 +20,6 @@ class Point {
 		// Getters
 		int getX() const;
 		int getY() const;
-
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);

@@ -53,7 +53,7 @@ void Character::use(int idx, ICharacter &target)
 {
     t_list *tmp;
 
-    if (idx < 0 || idx - 1 > lstLenght(this->_inventory))
+    if (idx < 0 || idx > lstLenght(this->_inventory) - 1)
         return;
     tmp = this->_inventory;
     for (int i = 0; tmp && i < idx; ++i)

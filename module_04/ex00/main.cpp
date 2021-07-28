@@ -2,7 +2,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
-
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
     const Animal *j = new Dog();
     const Animal *i = new Cat();
     const WrongAnimal *a = new WrongAnimal();
-    const WrongAnimal *b = new WrongAnimal();
+    const WrongAnimal *b = new WrongCat();
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;

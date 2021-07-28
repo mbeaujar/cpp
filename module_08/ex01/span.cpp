@@ -61,4 +61,3 @@ std::list<int> Span::getStorage() const {
 int Span::getsize() const {
 	return this->_size;
 }
-

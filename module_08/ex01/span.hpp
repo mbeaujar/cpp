@@ -27,6 +27,7 @@ class Span {
 				this->_a.push_back(*first);
 			}
 		};
+
 		// Methods
 		void addNumber(int);
 		int shortestSpan();

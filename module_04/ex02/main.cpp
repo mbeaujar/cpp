@@ -2,14 +2,14 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Brain.hpp"
 
-/* 
+/*
 int main()
 {
     {
         std::cout << "---------- EX00 ------------" << std::endl;
-        const Animal *meta = new Animal();
         const Animal *j = new Dog();
         const Animal *i = new Cat();
         const WrongAnimal *a = new WrongAnimal();
@@ -19,10 +19,8 @@ int main()
         std::cout << i->getType() << " " << std::endl;
         i->makeSound(); //will output the cat sound!
         j->makeSound();
-        meta->makeSound();
         a->makeSound();
         b->makeSound();
-        delete meta;
         delete i;
         delete j;
         delete a;
@@ -56,8 +54,8 @@ int main()
 
     }
     return (0);
-}
- */
+}*/
+
 int main()
 {
     const Animal *j = new Dog();

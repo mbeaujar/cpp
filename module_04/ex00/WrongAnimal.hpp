@@ -17,7 +17,7 @@ class WrongAnimal {
         WrongAnimal& operator=(WrongAnimal const &);
 
         // Methods
-        virtual void makeSound() const;
+        void makeSound() const;
 
         // Getters
         std::string getType() const;

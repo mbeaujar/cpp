@@ -1,6 +1,5 @@
 #include "mutantstack.hpp"
 
-
 template <typename T>
 MutantStack<T>::MutantStack(MutantStack const &copy) : std::stack<T>(copy) {}
 
