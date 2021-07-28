@@ -15,6 +15,8 @@ Character::~Character() {
 Character &Character::operator=(Character const &copy) {
     if (this == &copy)
         return *this;
+    if (this->_inventory)
+        freelst(&this->_inventory);
     this->_inventory = copyList(copy.getInventory());
     this->_name = copy.getName();
     return *this;
@@ -36,7 +38,7 @@ void Character::unequip(int idx)
 {
     t_list *tmp;
 
-    if (!this->_inventory)
+    if (!this->_inventory || idx > lstLenght(this->_inventory) - 1 || idx < 0)
         return;
     tmp = this->_inventory;
     for (int i = 0; tmp && i < idx; ++i)
@@ -53,7 +55,7 @@ void Character::use(int idx, ICharacter &target)
 {
     t_list *tmp;
 
-    if (idx < 0 || idx > lstLenght(this->_inventory) - 1)
+    if (idx < 0 || idx > lstLenght(this->_inventory) - 1 || !this->_inventory)
         return;
     tmp = this->_inventory;
     for (int i = 0; tmp && i < idx; ++i)
@@ -118,7 +120,8 @@ void freelst(t_list **lst)
     {
         tmp = *lst;
         *lst = (*lst)->next;
-        free(tmp);
+        delete tmp->content;
+        delete tmp;
     }
     *lst = NULL;
 }
@@ -140,7 +143,7 @@ t_list *copyList(t_list *lst)
         return NULL;
     while (lst)
     {
-        addlstback(&copy, createCell(lst->content));
+        addlstback(&copy, createCell(lst->content->clone()));
         lst = lst->next;
     }
     return (copy);

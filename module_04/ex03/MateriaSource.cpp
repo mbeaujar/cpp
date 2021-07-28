@@ -20,7 +20,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &copy) {
 // Methods
 
 void MateriaSource::learnMateria(AMateria *m) {
-    if (lstLenght(this->_inventory) >= 4)
+    if (lstLenght(this->_inventory) >= 4 || !m)
         return;
     addlstback(&this->_inventory, createCell(m));
 }
@@ -34,11 +34,7 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
     while (tmp)
     {
         if (tmp->content->getType() == type)
-        {
-            AMateria *a;
-            a = tmp->content;
-            return a;
-        }
+            return tmp->content->clone();
         tmp = tmp->next;
     }
     return (NULL);
