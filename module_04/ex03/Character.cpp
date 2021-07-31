@@ -49,6 +49,7 @@ void Character::unequip(int idx)
         tmp->next->previous = tmp->previous;
     if (tmp == this->_inventory)
         this->_inventory = NULL;
+    delete tmp;
 }
 
 void Character::use(int idx, ICharacter &target)
