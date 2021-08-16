@@ -1,133 +1,122 @@
 #include <iostream>
-#include <string>
+#include <cstdlib>
 #include <limits>
+#include <cmath>
+#include <math.h>
+#include <iomanip>
+#include <string.h>
 
-bool check_str(std::string str)
+bool parse_string(std::string s)
 {
+    int i = 0;
     int dot = 0;
-    for (int i = 0; str[i]; i++)
+
+    while (s[i])
     {
-        if (i == 0 && (str[i] == '-' || str[i] == '+'))
+        if (i == 0 && (s[0] == '-' || s[0] == '+'))
             i++;
-        if (str[i] == '.')
+        else if (s[i] == '.' && dot == 0) {
+            i++;
             dot++;
-        if (dot > 1)
+        }
+        else if (s[i] == 'f' && s[i + 1] == 0)
+            i++;
+        else if (s[i] < '0' || s[i] > '9')
             return false;
-        if ((str[i] > '9' || str[i] < '0') && str[i] != 'f' && str[i] != '.')
-            return false;
-        if (str[i] == 'f' && i != static_cast<int>(str.length()) - 1)
-            return false;
+        else
+            i++;
     }
+    if (i == 0)
+        return false;
     return true;
-}
-
-void print_error(char *argv[], bool parsing)
-{
-    std::cout << "char: impossible" << std::endl;
-    std::cout << "int: impossible" << std::endl;
-    if (static_cast<std::string>(argv[1]) == "nan")
-    {
-        std::cout << "float: nanf" << std::endl;
-        std::cout << "double: nan" << std::endl;
-    }
-    else if (parsing == false)
-    {
-        if (argv[1][0] == '-')
-        {
-            std::cout << "float: -inff" << std::endl;
-            std::cout << "double: -inf" << std::endl;
-        }
-        else
-        {
-            std::cout << "float: +inff" << std::endl;
-            std::cout << "double: +inf" << std::endl;
-        }
-    }
-    else
-    {
-        std::cout << "float: impossible" << std::endl;
-        std::cout << "double: impossible" << std::endl;
-    }
-    
-}
-
-// std::numerci_limits<double>::max();
-void toFloat(char *argv[])
-{
-    float nb;
-    std::cout << "float: ";
-    try
-    {
-        nb = std::stof(argv[1]);
-    }
-    catch (std::exception &e)
-    {
-        if (argv[1][0] == '-')
-            std::cout << "-inff" << std::endl;
-        else
-            std::cout << "+inff" << std::endl;
-        return;
-    }
-    if (nb == static_cast<int>(nb))
-        std::cout << nb << ".0f" << std::endl;
-    else
-        std::cout << nb << "f" << std::endl;
 }
 
 void toChar(double number)
 {
-    char nb = static_cast<char>(number);
-    std::cout << "char: ";
-    if (number < CHAR_MIN || number > CHAR_MAX)
-        std::cout << "impossible" << std::endl;
-    else if (nb > 32 && nb < 127)
-        std::cout << "'" << nb << "'" << std::endl;
-    else
-        std::cout << "Non displayable" << std::endl;
+    if (number < -128 || number > 127) {
+        std::cout << "char: impossible" << std::endl;
+    } else if (number < 32 || number > 126) {
+        std::cout << "char: Non displayable" << std::endl;
+    } else {
+        std::cout << "char: '" << static_cast<char>(number) << "'" << std::endl;
+    }
 }
 
 void toInt(double number)
 {
-    int nb = static_cast<int>(number);
-    std::cout << "int: ";
-    if (number > INT_MAX || number < INT_MIN)
-        std::cout << "impossible" << std::endl;
-    else
-        std::cout << nb << std::endl;
+    if (number > 2147483647 || number < -2147483648) {
+        std::cout << "int: impossible" << std::endl;
+    } else {
+        std::cout << "int: " << static_cast<int>(number) << std::endl;
+    }
+}
+
+void toFloat(double number)
+{
+    if (number > std::numeric_limits<float>::max() || number < -std::numeric_limits<float>::max()) {
+        std::cout << "float: impossible" << std::endl;
+    } else {
+        float nb = static_cast<float>(number);
+        std::cout << std::fixed << std::setprecision(1) << "float: " << nb;
+        std::cout << "f" << std::endl;
+    }
 }
 
 void toDouble(double number)
 {
-    std::cout << "double: " << number;
-    if (number == static_cast<int>(number))
-        std::cout << ".0" << std::endl;
+    if (number > std::numeric_limits<double>::max() || number < -std::numeric_limits<double>::max()) {
+        std::cout << "double: impossible" << std::endl;
+    } else {
+        std::cout << std::fixed << std::setprecision(1) << "double: " << number << std::endl;
+    }
+}
+
+int notANumber()
+{
+    std::cout << "char: impossible" << "\n";
+    std::cout << "int: impossible" << "\n";
+    std::cout << "float: nanf" << "\n";
+    std::cout << "double: nan" << std::endl;
+    return 1;
+}
+
+int infinite(bool sign)
+{
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "char: impossible" << std::endl;
+    if (sign == true)
+    {
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "double: +inf" << std::endl;
+    }
     else
-        std::cout << std::endl;
+    {
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "double: -inf" << std::endl;
+    }
+    return 1;
 }
 
 int main(int argc, char *argv[])
 {
-    double number;
-
-    if (argc != 2)
-        return (1);
-    if (check_str(argv[1]) == false)
-    {
-        print_error(argv, true);
-        return (1);
+    if (argc != 2) {
+        std::cout << "error: number of arguments is invalid" << std::endl;
+        return 1;
     }
-    try
-    {
-        number = std::stod(argv[1]);
+    if (strcmp(argv[1], "nan") == 0 || strcmp(argv[1], "nanf") == 0)
+        return notANumber();
+    if (strcmp(argv[1], "inf") == 0 || strcmp(argv[1], "inff") == 0)
+        return infinite(true);
+    if (strcmp(argv[1], "-inf") == 0 || strcmp(argv[1], "-inff") == 0)
+        return infinite(false);
+    if (parse_string(argv[1]) == false) {
+        std::cout << "error: argument invalid" << std::endl;
+        return 1;
     }
-    catch (std::exception &e)
-    {
-        print_error(argv, false);
-        return (1);
-    }
+    double number = atof(argv[1]);
     toChar(number);
     toInt(number);
-    toFloat(argv);
+    toFloat(number);
     toDouble(number);
-    return (0);
+    return 0;
 }
