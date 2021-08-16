@@ -14,11 +14,10 @@
 
 // Coplien form
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	try {
 		gradeNorm(grade);
 		this->_grade = grade;
-		this->_name = name;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -37,7 +36,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const &assignation) {
 	try {
 		gradeNorm(assignation.getGrade());
 		this->_grade = assignation.getGrade();
-		this->_name = assignation.getName();
+		//this->_name = assignation.getName();
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

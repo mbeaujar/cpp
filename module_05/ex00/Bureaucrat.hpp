@@ -17,27 +17,22 @@
 
 class Bureaucrat {
 	private:
-		std::string 	_name;
+		const std::string 	_name;
 		int 			_grade;
 		
-		// Utils fonctions
 		void gradeNorm(int grade);
 	public:
-		// Coplien form
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const &copy);
 		virtual ~Bureaucrat();
 		Bureaucrat & operator=(Bureaucrat const &assignation);
 
-		// Methods
 		void incrementGrade(int inc);
 		void decrementGrade(int dec);
 
-		// Getters
 		std::string getName() const;
 		int getGrade() const;
 
-		// Exceptions 
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {

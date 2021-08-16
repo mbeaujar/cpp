@@ -41,6 +41,6 @@ void Karen::complain(std::string level)
      for (int i = 0; i < 4; i++)
     {
         if (level == fct[i])
-           (this->*(f[i]))();
+           (this->*f[i])();
     } 
 }

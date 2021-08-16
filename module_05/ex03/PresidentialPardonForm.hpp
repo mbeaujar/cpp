@@ -1,39 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/06 16:33:52 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/06 16:34:14 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef __PRESIDENTIALPARDONFORM_HPP__
+#define __PRESIDENTIALPARDONFORM_HPP__
 
 #include "Form.hpp"
-#include <stdlib.h>
-#include <time.h>
-#include <sys/time.h>
-#include <unistd.h>
 
 class PresidentialPardonForm : public Form {
-    public:
-        // Coplien form
-        PresidentialPardonForm(std::string const &);
-        PresidentialPardonForm(PresidentialPardonForm const &);
-        virtual ~PresidentialPardonForm();
-        PresidentialPardonForm &operator=(PresidentialPardonForm const &);
+	private:
+		PresidentialPardonForm& operator=(PresidentialPardonForm const &);
+	public:
+		PresidentialPardonForm(std::string const &);
+		PresidentialPardonForm(PresidentialPardonForm const &);
+		~PresidentialPardonForm();
 
-        // Methods
-        void beSigned(Bureaucrat &);
-        void execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const &executor) const;
 
-        // Getters
-        bool getSign() const;
+		class NotSignedException : public std::exception {
+			public:
+				virtual const char* what() const throw() {
+					return "Form is not signed";
+				};
+		};
 };
-
 
 #endif

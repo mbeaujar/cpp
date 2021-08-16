@@ -1,30 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/06 17:05:14 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/06 17:17:18 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef __INTERN_HPP__
+#define __INTERN_HPP__
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
-
-#include <iostream>
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern {
-	private:
-		Intern(Intern const &);	
-		Intern &operator=(Intern const &);	
 	public:
-		Intern();	
-		virtual ~Intern();
+		Intern();
+		~Intern();
+		Intern(Intern const &);
+		Intern& operator=(Intern const &);
 
-		Form* makeForm(std::string const &s1, std::string const &s2);
+		Form* makeForm(std::string const &formName, std::string const &targetName);
 };
 
 #endif

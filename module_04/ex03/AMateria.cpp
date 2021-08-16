@@ -23,7 +23,7 @@ AMateria &AMateria::operator=(AMateria const &copy) {
 // Methods
 
 void AMateria::use(ICharacter &target) {
-    (void)target;
+	std::cout << "Make nothing with " << target.getName() << std::endl;
 }
 
 // Getters

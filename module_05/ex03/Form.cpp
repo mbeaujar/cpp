@@ -1,78 +1,64 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 11:04:58 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/06 16:50:22 by mbeaujar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Form.hpp"
 
-// Coplien form
+Form::Form(std::string name, int gradeToSign, int GradeToExec)
+	: _name(name),
+	  _isSigned(false),
+	  _gradeToSign(gradeToSign),
+	  _gradeToExec(GradeToExec)
+{}
 
-Form::Form(std::string name) : _name(name) {
-    this->_sign = false;
-}
-
-
-
-Form::Form(Form const &copy) {
-    *this = copy;
-}
+Form::Form(Form const &op)
+	: _name(op._name),
+	  _isSigned(false),
+	  _gradeToSign(op._gradeToSign),
+	  _gradeToExec(op._gradeToExec)
+{}
 
 Form::~Form() {}
 
-Form & Form::operator=(Form const &assignation) {
-    this->_name = assignation.getName();
-    this->_sign = assignation.getSign();
-    return *this;
+Form& Form::operator=(Form const &op) {
+	if (this == &op)
+		return *this;
+	_isSigned = op._isSigned;
+	return *this;
 }
 
-// Methods
-
-void Form::beSigned(Bureaucrat &bob) {
-    try {
-        if (bob.getGrade() > 70)
-            throw Form::GradeTooLowException();
-        this->_sign = true;
-        bob.signForm(*this, "");
-    } catch (std::exception &e) {
-        bob.signForm(*this, e.what());
-    }
+void Form::beSigned(Bureaucrat &bu) {
+	int grade = bu.getGrade();
+	if (grade < _gradeToSign) {
+		_isSigned = true;
+		bu.signForm(true, _name, "");
+	}
+	else {
+		throw Form::GradeTooLowException();
+	}
 }
 
-void Form::execute(Bureaucrat const &executor) const {
-    (void)executor;
-}
-
-// Getters
-
+/* void Form::execute(Bureaucrat const &executor) const {
+	std::cout << "executed" << std::endl;
+} */
 
 std::string Form::getName() const {
-    return this->_name;
+	return _name;
 }
 
 bool Form::getSign() const {
-    return this->_sign;
+	return _isSigned;
 }
 
-// Setters
-
-void Form::setName(std::string name) {
-    this->_name = name;
+int Form::getGradeToSign() const {
+	return _gradeToSign;
 }
 
-void Form::setSign(bool sign) {
-    this->_sign = sign;
+int Form::getGradeToExec() const {
+	return _gradeToExec;
 }
 
-// operator
 
-std::ostream & operator<<(std::ostream &o, Form const &d) {
-    o << "Form : " << d.getName() << " --- sign : " << d.getSign() << std::endl;
-    return o;
+std::ostream& operator<<(std::ostream &o, Form const &op) {
+	if (op.getSign() == true)
+		o << "Sign " << op.getName() << " is signed";
+	else
+		o << "Sign " << op.getName() << " is not signed";
+	return o;
 }

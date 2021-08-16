@@ -76,12 +76,16 @@ void Karen::complain(std::string level)
 	{
 		case 4:
 			this->debug();
+			std::cout << std::endl;
 		case 3:
 			this->info();
+			std::cout << std::endl;
 		case 2:
 			this->warning();
+			std::cout << std::endl;
 		case 1:
 			this->error();
+			std::cout << std::endl;
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

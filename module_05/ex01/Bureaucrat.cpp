@@ -6,7 +6,7 @@
 /*   By: mbeaujar <mbeaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 19:12:17 by mbeaujar          #+#    #+#             */
-/*   Updated: 2021/07/04 12:15:30 by mbeaujar         ###   ########.fr       */
+/*   Updated: 2021/07/04 14:03:46 by mbeaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 // Coplien form
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	try {
 		gradeNorm(grade);
 		this->_grade = grade;
-		this->_name = name;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -37,7 +36,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const &assignation) {
 	try {
 		gradeNorm(assignation.getGrade());
 		this->_grade = assignation.getGrade();
-		this->_name = assignation.getName();
+		//this->_name = assignation.getName();
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -69,13 +68,11 @@ void Bureaucrat::decrementGrade(int dec) {
 	}
 }
 
-void Bureaucrat::signForm(Form &eval, std::string reason) {
-	if (eval.getSign() == true) {
-		std::cout << this->_name << " signs " << eval.getName() << std::endl;
-	}
-	else {
-		std::cout << this->_name << " cannot sign " << eval.getName() << " because " << reason << std::endl;
-	}
+void Bureaucrat::signForm(bool isSigned, std::string name, std::string reason) const {
+	if (isSigned == true)
+		std::cout << _name << " signs " << name << std::endl;
+	else
+		std::cout << _name << " cannot sign " << name << " because " << reason << std::endl;
 }
 
 
