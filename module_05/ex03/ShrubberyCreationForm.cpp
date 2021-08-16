@@ -21,16 +21,17 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		throw ShrubberyCreationForm::NotSignedException();
 	if (executor.getGrade() > this->getGradeToExec())
 		throw Form::GradeTooLowException();
-	std::ofstream newfile(this->getName() + "_shrubbery");
-	newfile << "      /\\      " << std::endl;
-	newfile << "     /\\*\\     " << std::endl;
-	newfile << "    /\\O\\*\\    " << std::endl;
-	newfile << "   /*/\\/\\/\\   " << std::endl;
-	newfile << "  /\\O\\/\\*\\/\\  " << std::endl;
-	newfile << " /\\*\\/\\*\\/\\/\\ " << std::endl;
-	newfile << "/\\O\\/\\/*/\\/O/\\" << std::endl;
-	newfile << "      ||      " << std::endl;
-	newfile << "      ||      " << std::endl;
-	newfile << "      ||      " << std::endl;
-	newfile.close();
+	std::string nameFile = this->getName() + "_shrubbery";
+	std::ofstream newFile(nameFile.data());
+	newFile << "      /\\      " << std::endl;
+	newFile << "     /\\*\\     " << std::endl;
+	newFile << "    /\\O\\*\\    " << std::endl;
+	newFile << "   /*/\\/\\/\\   " << std::endl;
+	newFile << "  /\\O\\/\\*\\/\\  " << std::endl;
+	newFile << " /\\*\\/\\*\\/\\/\\ " << std::endl;
+	newFile << "/\\O\\/\\/*/\\/O/\\" << std::endl;
+	newFile << "      ||      " << std::endl;
+	newFile << "      ||      " << std::endl;
+	newFile << "      ||      " << std::endl;
+	newFile.close();
 }
