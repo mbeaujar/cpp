@@ -1,6 +1,6 @@
-NAME=ex01
+NAME=a.out
 CC=clang++
-CPPFLAGS=-Wall -Wextra -Werror -std=c++98
+CPPFLAGS=-Wall -Wextra -Werror #-std=c++98
 RM=rm -f
 SRCS= main.cpp
 

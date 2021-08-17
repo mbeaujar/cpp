@@ -14,5 +14,14 @@ int main()
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+
+	std::list<int> b;
+
+	b.push_back(20);
+	try {
+		std::cout << "pos: " << easyfind(b, 34) << std::endl;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }

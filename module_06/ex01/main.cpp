@@ -1,12 +1,4 @@
-#include <iostream>
-
-struct Data {
-    int id;
-};
-
-struct WrongData {
-    int id; 
-};
+#include "main.hpp"
 
 uintptr_t serialize(Data* ptr) {
     return reinterpret_cast<uintptr_t>(ptr);

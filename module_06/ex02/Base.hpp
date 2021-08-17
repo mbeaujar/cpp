@@ -13,11 +13,16 @@
 #ifndef BASE_HPP
 #define BASE_HPP
 
+#include <iostream>
+#include <sys/time.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 class Base;
 
 class Base {
 	public:
-		virtual ~Base () {};
+		virtual ~Base ();
 };
 
 class A : public Base {};
@@ -26,6 +31,5 @@ class B : public Base {};
 
 class C : public Base {};
 
-class D {};
 
 #endif

@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <sys/time.h>
-#include <unistd.h>
 #include "Base.hpp"
 
 unsigned int hash3(unsigned int h1, unsigned int h2, unsigned int h3)
@@ -41,7 +38,7 @@ Base *generate(void)
 	return f[rand() % 3]();
 }
 
-void identify_from_pointer(Base *p)
+void identify(Base *p)
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "A" << std::endl;
@@ -51,14 +48,23 @@ void identify_from_pointer(Base *p)
 		std::cout << "C" << std::endl;
 }
 
-void identify_from_reference(Base &p)
+void identify(Base &p)
 {
-	if (dynamic_cast<A *>(&p))
+	try {
+		A &test = dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B *>(&p))
+		(void)test;
+	} catch (std::bad_cast &b) {}
+	try {
+		B &test = dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C *>(&p))
+		(void)test;
+	} catch (std::bad_cast &b) {}
+	try {
+		C &test = dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
+		(void)test;
+	} catch (std::bad_cast &b) {}
 }
  
 int main()
@@ -72,9 +78,9 @@ int main()
 		std::cout << "-------- TEST #" << i << " -----------" << std::endl;
 		Base *test = generate();
 		std::cout << "From pointer: ";
-		identify_from_pointer(test);
+		identify(test);
 		std::cout << "From reference: ";
-		identify_from_reference(*test);
+		identify(*test);
 		delete test;
 	}
 	return (0);

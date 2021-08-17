@@ -11,6 +11,8 @@ Span::Span(Span const &copy) {
 Span::~Span() {}
 
 Span& Span::operator=(Span const &assi) {
+	if (this == &assi)
+		return *this;
 	this->_a = assi.getStorage();
 	this->_size = assi.getsize();
 	return *this;
@@ -24,18 +26,20 @@ void Span::addNumber(int n) {
 }
 
 int Span::shortestSpan() {
-	if (this->_a.size() < 2)
+	if (_a.size() < 2)
 		throw Span::NotEnoughNumbers();
 	std::list<int>::iterator it;
 	std::list<int>::iterator ite;
-	unsigned int len = UINT_MAX;
+	unsigned int len = 4294967295;
 	int next_value;
 
-	this->_a.sort();
-	ite = this->_a.end();
-	for (it = this->_a.begin(); it != ite; ++it)
+	_a.sort();
+	ite = _a.end();
+	for (it = _a.begin(); it != ite; ++it)
 	{
-		next_value = *std::next(it, 1);
+		std::list<int>::iterator check = it;
+		++check;
+		next_value = *check;
 		if (static_cast<unsigned int>(next_value - *it) < len)
 			len = next_value - *it;
 	}
