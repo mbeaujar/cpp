@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
     }
     if (strcmp(argv[1], "nan") == 0 || strcmp(argv[1], "nanf") == 0)
         return notANumber();
-    if (strcmp(argv[1], "inf") == 0 || strcmp(argv[1], "inff") == 0)
+    if (strcmp(argv[1], "+inf") == 0 || strcmp(argv[1], "+inff") == 0)
         return infinite(true);
     if (strcmp(argv[1], "-inf") == 0 || strcmp(argv[1], "-inff") == 0)
         return infinite(false);
