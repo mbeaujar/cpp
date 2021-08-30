@@ -26,7 +26,7 @@ class Array {
 			delete [] this->_array;
 			this->_array = new T[assi.size()]();
 			this->_size = assi.size();
-			for (int i = 0; i < this->_size; i++)
+			for (unsigned int i = 0; i < this->_size; i++)
 				this->_array[i] = assi._array[i];
 			return *this;
 		};
