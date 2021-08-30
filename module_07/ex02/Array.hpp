@@ -10,7 +10,7 @@ class Array {
 		unsigned int _size;
 	public:
 		// Coplien Form
-		Array() : _array(new T[1]()), _size(0) {};
+		Array() : _array(new T[0]()), _size(0) {};
 		Array(unsigned int n) : _array(new T[n]()), _size(n) {};
 		Array(Array const &copy) {
 			*this = copy;
