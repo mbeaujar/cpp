@@ -7,7 +7,7 @@ template <typename T>
 class Array {
 	private:
 		T*	_array;
-		int _size;
+		unsigned int _size;
 	public:
 		// Coplien Form
 		Array() : _array(new T[1]()), _size(0) {};
