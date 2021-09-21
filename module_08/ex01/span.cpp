@@ -25,7 +25,7 @@ void Span::addNumber(int n) {
 	this->_a.push_back(n);
 }
 
-int Span::shortestSpan() {
+unsigned int Span::shortestSpan() {
 	if (_a.size() < 2)
 		throw Span::NotEnoughNumbers();
 	std::list<int>::iterator it;
@@ -46,7 +46,7 @@ int Span::shortestSpan() {
 	return (len);
 }
 
-int Span::longestSpan() {
+unsigned int Span::longestSpan() {
 	if (this->_a.size() < 2)
 		throw Span::NotEnoughNumbers();
 	this->_a.sort();
