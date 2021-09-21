@@ -30,8 +30,8 @@ class Span {
 
 		// Methods
 		void addNumber(int);
-		int shortestSpan();
-		int longestSpan();
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
 
 		// Getters
 		std::list<int> getStorage() const;
